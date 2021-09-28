@@ -65,8 +65,14 @@ typedef NS_ENUM(NSInteger, AIRBErrorCode)
     AIRBRTCFailedToPublishBypassLive,
     AIRBRTCFailedToGetBypassLiveDetail,
     AIRBRTCFailedToDestroyBypassLive,
+    AIRBRTCFailedToSubscribe,
 
     AIRBVodPlayerFailedToPlayWithFatalError = 0x600,
+    
+    AIRBChatCommentSentInnerError = 0x700,
+    AIRBChatCommentSentInvalidChatID,
+    AIRBChatCommentSentFrequencyExceedsLimit,
+    AIRBChatCommentLengthExceedsLimit,
 };
 
 typedef NS_ENUM(NSInteger, AIRBRoomEngineEvent)
@@ -565,6 +571,13 @@ typedef NS_ENUM(NSInteger, AIRBWhiteBoardPlayMode){
 
 typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveLayoutType){
     AIRBRTCBypassLiveLayoutTypeOnePeer = 1, // 一宫格
-    AIRBRTCBypassLiveLayoutTypeFourPeer = 2,    // 四宫格（一大四小）
+    AIRBRTCBypassLiveLayoutTypeFourPeer = 2,    // 五宫格（一大四小）
     AIRBRTCBypassLiveLayoutTypeNinePeer = 3     // 九宫格
+};
+
+typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveResolutionType){
+    AIRBRTCBypassLiveResolutionType_1280x720 = 1,   // 1280x720(横屏)
+    AIRBRTCBypassLiveResolutionType_720x1280 = 2,   // 720x1280(竖屏)
+    AIRBRTCBypassLiveResolutionType_1920x1080 = 3,  // 1920x1080(横屏)
+    AIRBRTCBypassLiveResolutionType_1080x1920 = 4   // 1080x1920(竖屏)
 };

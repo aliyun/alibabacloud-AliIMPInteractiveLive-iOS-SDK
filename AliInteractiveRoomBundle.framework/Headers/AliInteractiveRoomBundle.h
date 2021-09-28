@@ -28,6 +28,7 @@
 
 #import "AIRBRTCProtocol.h"
 #import "AIRBRTCConfig.h"
+#import "AIRBRTCBypassLiveLayoutPeerVideoModel.h"
 
 #import "AIRBWhiteBoardProtocol.h"
 #import "AIRBWhiteBoardConfig.h"

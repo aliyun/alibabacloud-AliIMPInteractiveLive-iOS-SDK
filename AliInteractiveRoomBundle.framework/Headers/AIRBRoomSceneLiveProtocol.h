@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) createLiveWithTitle:(NSString*)title
                       notice:(NSString*)notice
                     coverUrl:(NSString*)url
+                  anchorNick:(NSString*)nick
                    extension:(NSDictionary*)extension
                    onSuccess:(void(^)(NSDictionary* response))onSuccess
                    onFailure:(void(^)(NSString* error))onFailure;

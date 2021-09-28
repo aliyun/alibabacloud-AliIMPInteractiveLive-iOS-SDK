@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class AIRBRoomChannelUserListResponse;
 @class AIRBRTCConfig;
+@class AIRBRTCBypassLiveLayoutPeerVideoModel;
 
 @protocol AIRBRTCDelegate <NSObject>
 - (void) onAIRBRTCErrorWithCode:(AIRBErrorCode)code message:(NSString*)msg;
@@ -59,6 +60,15 @@ NS_ASSUME_NONNULL_BEGIN
                onSuccess:(void(^)(void))onSuccess
                onFailure:(void(^)(NSString* errorMessage))onFailure;
 
+/**
+ * @brief 设置基础美颜
+ * @param enable 基础美颜开关
+ * @param whiteningLevel 美白等级[0-1.0]
+ * @param smoothnessLevel 磨皮等级[0-1.0]
+*/
+- (void) setBasicFaceBeauty:(BOOL)enable
+             whiteningLevel:(float)whiteningLevel
+            smoothnessLevel:(float)smoothnessLevel;
 
 - (void) subscribeRemoteAudioStream:(BOOL)sub fromUser:(NSString*)userID;
 
@@ -69,13 +79,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) startPublishingBypassLive;
 
 /**
- * 设置旁路推流的布局
- * @param type 布局样式
+ * 设置预设的旁路推流的布局
+ * @param type 预设的布局样式
  * @param userIDs 要展示的用户ID列表:从左上到右下依次排序
  * @param onSuccess 成功的回调
  * @param onFailure 失败的回调
  */
-- (void) setBypassLiveLayout:(AIRBRTCBypassLiveLayoutType)type userIDs:(NSArray<NSString*>*) userIDs onSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSString* error))onFailure;
+- (void) setBypassLiveLayout:(AIRBRTCBypassLiveLayoutType)type
+                     userIDs:(NSArray<NSString*>*) userIDs
+                   onSuccess:(void(^)(void))onSuccess
+                   onFailure:(void(^)(NSString* error))onFailure;
+
+/**
+ * 设置自定义的旁路推流的布局
+ */
+- (void) setCustomBypassLiveLayout:(NSArray<AIRBRTCBypassLiveLayoutPeerVideoModel*>*) peerModels
+                         onSuccess:(void(^)(void))onSuccess
+                         onFailure:(void(^)(NSString* error))onFailure;
 
 - (void) startRecordingOnSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSString* error))onFailure;
 - (void) pauseRecordingOnSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSString* error))onFailure;

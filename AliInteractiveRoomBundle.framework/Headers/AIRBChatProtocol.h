@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param onSuccess 成功的回调
  * @param onFailure 失败的回调
  */
-- (void) getCurrentChatInfoOnSuccess:(void(^)(int32_t totalComment, int32_t totalLike))onSuccess onFailure:(void(^)(NSString* errMessage))onFailure;
+- (void) getCurrentChatInfoOnSuccess:(void(^)(NSDictionary* info))onSuccess onFailure:(void(^)(NSString* errMessage))onFailure;
 
 /**
  * 在房间内发送互动评论
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void) sendComment:(NSString*)comment
            onSuccess:(void (^)(void))onSuccess
-           onFailure:(void (^)(NSString* errorMessage))onFailure;
+           onFailure:(void (^)(AIRBErrorCode code, NSString* message))onFailure;
 
 /**
  * 发送点赞
