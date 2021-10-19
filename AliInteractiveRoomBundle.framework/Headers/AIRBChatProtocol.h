@@ -34,6 +34,18 @@ NS_ASSUME_NONNULL_BEGIN
            onFailure:(void (^)(AIRBErrorCode code, NSString* message))onFailure;
 
 /**
+ * 在房间内发送互动评论
+ * @param comment 要发送的评论内容
+ * @param extension 扩展字段
+ * @param onSuccess 成功的回调
+ * @param onFailure 失败的回调
+ */
+- (void) sendComment:(NSString*)comment
+           extension:(NSDictionary<NSString*, NSString*>*)extension
+           onSuccess:(void (^)(void))onSuccess
+           onFailure:(void (^)(AIRBErrorCode code, NSString* message))onFailure;
+
+/**
  * 发送点赞
  */
 - (void) sendLike;

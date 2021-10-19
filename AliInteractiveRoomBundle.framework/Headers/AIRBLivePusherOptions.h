@@ -22,68 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) NSString* extension;
 @end
 
-@interface AIRBLivePusherFaceBeautyOptions : NSObject
-/**
- 美颜模式
- * 默认 : AIRBLivePushBeautyModeNormal 普通模式
- */
-@property (nonatomic, assign) AIRBLivePushBeautyMode beautyMode;
-/**
- 美颜 美白参数
- * 默认 : 70
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyWhite;
-
-
-/**
- 美颜 磨皮参数
- * 默认 : 40
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyBuffing;
-
-
-/**
- 美颜 红润参数
- * 默认 : 40
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyRuddy;
-
-
-/**
- 美颜 腮红参数
- * 默认 : 15
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyCheekPink;
-
-
-/**
- 美颜 瘦脸参数
- * 默认 : 40
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyThinFace;
-
-
-/**
- 美颜 收下巴参数
- * 默认 : 50
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyShortenFace;
-
-
-/**
- 美颜 大眼参数
- * 默认 : 30
- * 范围 : [0,100]
- */
-@property (nonatomic, assign) int beautyBigEye;
-@end
-
 @interface AIRBLivePusherMediaStreamingOptions : NSObject
 
 /**
@@ -117,10 +55,54 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) BOOL onlyAudio;
 @end
 
+@interface AIRBLivePusherBeautyOptions : NSObject
+
+/**
+ * 基础美颜，默认打开;
+ * 包括 [@"磨皮",@"美白",@"锐化",@"瘦脸",@"脸长",@"削脸",@"瘦颧骨",@"下颌骨",@"下巴",@"下巴拉长",@"大眼",@"眼睑下至",@"眼距",@"瘦鼻",@"鼻长",@"鼻翼",@"鼻头长",@"嘴型",@"嘴唇厚度",@"人中"]
+ */
+
+
+/**
+ * 美妆，默认NO;
+ * 包括 [@"高光",@"美瞳",@"口红",@"眼妆"]
+ * 注意：暂未开放，设置无效；
+ */
+@property (assign, nonatomic) BOOL enableMakeupBeauty;
+
+/**
+ * 滤镜，默认NO; 待开放；
+ * 包括 [@"超脱",@"纯真",@"怀旧",@"蓝调",@"清新",@"元气",@"美白",@"初恋",@"清爽",@"非凡",@"动人",@"萌系",@"日系",@"年华",@"单纯",@"蔷薇",@"安静",@"严肃",@"日光"]
+ * 注意：暂未开放，设置无效；
+ */
+@property (assign, nonatomic) BOOL enableFilter;
+
+/**
+ * 贴纸，默认NO; 待开放；
+ * 包括[@"白羊",@"八字胡",@"布偶",@"小黄脸",@"猴子",@"胡须",@"猫耳朵",@"射手座",@"手绘胡子",@"兔子"]
+ * 注意：暂未开放，设置无效；
+ */
+@property (assign, nonatomic) BOOL enableStickers;
+
+/**
+ * 腮红，默认NO; 待开放；
+ * 包括 [@"黛紫",@"蜜橘",@"嫩粉",@"桃红",@"樱桃"]
+ * 注意：暂未开放，设置无效；
+ */
+@property (assign, nonatomic) BOOL enableFaceBlush;
+
+/**
+ * 整妆，默认NO; 待开放；
+ * 包括 [@"活力",@"基础",@"梅子",@"魅惑",@"蜜桃",@"奶橘",@"杏粉",@"优雅",@"元气少女"];
+ * 注意：暂未开放，设置无效；
+ */
+@property (assign, nonatomic) BOOL enableCompleteMakeup;
+@end
+
 @interface AIRBLivePusherOptions : NSObject
 @property (strong, nonatomic) AIRBLivePusherLiveBusinessOptions* businessOptions;
 @property (strong, nonatomic) AIRBLivePusherMediaStreamingOptions* mediaStreamingOptions;
-@property (strong, nonatomic) AIRBLivePusherFaceBeautyOptions* faceBeautyOptions;
+@property (strong, nonatomic) AIRBLivePusherBeautyOptions* beautyOptions;
 
 + (instancetype) defaultOptions;
 @end

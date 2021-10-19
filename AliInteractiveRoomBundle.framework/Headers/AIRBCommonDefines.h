@@ -434,6 +434,7 @@ typedef NS_ENUM(NSInteger, AIRBLivePusherEvent)
     AIRBLivePusherEventNetworkConnectionLost,
     AIRBLivePusherEventNetworkReconnectStart,
     AIRBLivePusherEventNetworkReconnectSuccess,
+    AIRBLivePusherEventNetworkReconnectFailed,
     AIRBLivePusherEventStopped,
 };
 
@@ -505,6 +506,10 @@ typedef NS_ENUM(NSInteger, AIRBRTCEvent)
     AIRBRTCEventLeaveSucceeded,
     AIRBRTCEventBypassLiveStarted,
     AIRBRTCEventNotification,
+    AIRBRTCEventNetworkConnectionLost,      // 网络连接断开
+    AIRBRTCEventNetworkReconnectStart,      // 网络开始重连
+    AIRBRTCEventNetworkReconnectSuccess,    // 网络重连成功
+    AIRBRTCEventNetworkConnectionFailed,    // 网络连接失败（不再进行重连）
 };
 
 typedef NS_ENUM(NSInteger, AIRBRoomChatCommentsSortedType)
@@ -570,8 +575,8 @@ typedef NS_ENUM(NSInteger, AIRBWhiteBoardPlayMode){
 };
 
 typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveLayoutType){
-    AIRBRTCBypassLiveLayoutTypeOnePeer = 1, // 一宫格
-    AIRBRTCBypassLiveLayoutTypeFourPeer = 2,    // 五宫格（一大四小）
+    AIRBRTCBypassLiveLayoutTypeOnePeer = 1,     // 一宫格
+    AIRBRTCBypassLiveLayoutTypeFivePeer = 2,    // 五宫格（一大四小）
     AIRBRTCBypassLiveLayoutTypeNinePeer = 3     // 九宫格
 };
 
@@ -580,4 +585,17 @@ typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveResolutionType){
     AIRBRTCBypassLiveResolutionType_720x1280 = 2,   // 720x1280(竖屏)
     AIRBRTCBypassLiveResolutionType_1920x1080 = 3,  // 1920x1080(横屏)
     AIRBRTCBypassLiveResolutionType_1080x1920 = 4   // 1080x1920(竖屏)
+};
+
+/**
+ * @brief AIRBRTC网络质量
+ */
+typedef NS_ENUM(NSUInteger, AIRBRTCNetworkQuality) {
+    AIRBRTCNetworkQualityExcellent  = 0,    // 网络极好，流畅度清晰度质量好
+    AIRBRTCNetworkQualityGood       = 1,    // 网络好，流畅度清晰度和极好差不多
+    AIRBRTCNetworkQualityPoor       = 2,    // 网络较差，音视频流畅度清晰度有瑕疵，不影响沟通
+    AIRBRTCNetworkQualityBad        = 3,    // 网络差，视频卡顿严重，音频能正常沟通
+    AIRBRTCNetworkQualityVeryBad    = 4,    // 网络极差，基本无法沟通
+    AIRBRTCNetworkQualityDisconnect = 5,    // 网络中断
+    AIRBRTCNetworkQualityUnknow     = 6,    // 未知
 };

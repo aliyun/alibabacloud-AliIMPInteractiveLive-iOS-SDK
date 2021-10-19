@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 旁路推流分辨率类型，默认值为AIRBRTCBypassLiveResolutionType_1280x720
+ * @note 非必需，只有开启旁路直播的房主设置才会生效
  */
 @property (nonatomic, assign) AIRBRTCBypassLiveResolutionType bypassLiveResolutionType;
 

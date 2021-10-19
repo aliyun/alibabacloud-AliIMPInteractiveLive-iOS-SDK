@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @class AIRBLivePusherFaceBeautyOptions;
 @class AIRBLivePusherLiveBusinessOptions;
 
-
 @protocol AIRBLivePusherDelegate <NSObject>
 - (void) onAIRBLivePuhserEvent:(AIRBLivePusherEvent)event info:(NSDictionary*)info;
 - (void) onAIRBLivePusherError:(AIRBErrorCode)errorCode message:(NSString*)errorMessage;
@@ -44,6 +43,11 @@ NS_ASSUME_NONNULL_BEGIN
  * 推流时的相机画面预览view的拉伸模式，具体见AIRBVideoViewContentMode，默认为AIRBVideoViewContentModeAspectFill
  */
 @property (assign, nonatomic) AIRBVideoViewContentMode contentMode;
+
+/**
+ * 美颜面板，已经实现完毕，外部只需present即可，建议size为CGSizeMake(屏幕宽度，200)；
+ */
+@property (strong, nonatomic) UIViewController* beautyViewController;
 
 /**
  * 根据配置，打开推流预览画面
@@ -95,11 +99,6 @@ NS_ASSUME_NONNULL_BEGIN
  * 动态打开或者关闭美颜
  */
 - (void) toggleFaceBeauty;
-
-/**
- * 动态更新美颜参数，具体见AIRBLivePusherFaceBeautyOptions
- */
-- (void) updateFaceBeautyParameters:(AIRBLivePusherFaceBeautyOptions*) beautyOptions;
 
 /**
  * 动态更新直播业务信息，具体见AIRBLivePusherLiveBusinessOptions
