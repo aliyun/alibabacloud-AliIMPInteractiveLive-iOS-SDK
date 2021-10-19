@@ -31,11 +31,9 @@ else:
     os.system(tag)
     os.system('git push --tags')
 
-
-    lint = 'pod spec lint ' + sp + ' --verbose'
-    trunk = 'pod trunk push ' + sp
-
     for sp in specs:
+        lint = 'pod spec lint ' + sp + ' --verbose'
+        trunk = 'pod trunk push ' + sp
         os.system(lint)
         os.system(trunk)
     
