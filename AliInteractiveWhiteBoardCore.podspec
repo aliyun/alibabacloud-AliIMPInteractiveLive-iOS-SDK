@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveWhiteBoardCore"
-  s.version      = "1.4.0-rc4"
+  s.version      = "1.4.0-rc5"
   s.summary      = "AliInteractiveWhiteBoardCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live, which implement by Objective-C.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'AliInteractiveWhiteBoardCore.framework'
   s.frameworks = 'Foundation', 'UIKit'
-  s.resource_bundles = {'AliInteractiveWhiteBoardResource' => ['AliInteractiveWhiteBoardCoreResource/AliInteractiveWhiteBoardResource.xcassets']}
+  s.resource_bundles = {'AliInteractiveWhiteBoardResource' => ['AliInteractiveWhiteBoardResource/AliInteractiveWhiteBoardCoreResource.xcassets']}
   # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'
