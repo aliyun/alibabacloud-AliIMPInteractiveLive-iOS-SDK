@@ -24,13 +24,21 @@ else:
 
 
     tag = "git tag -a "+version+" -m '"+version+"'"
-    trunk = 'pod trunk push ' + spec + ' --allow-warnings --verbose --skip-import-validation'
+    
     os.system('git add .')
     os.system('git commit -m release')
     os.system('git push')
     os.system(tag)
     os.system('git push --tags')
-    os.system(trunk)
+
+
+    lint = 'pod spec lint' + spec + '--verbose'
+    trunk = 'pod trunk push ' + spec + ' --allow-warnings --verbose --skip-import-validation'
+
+    for spec in specs:
+        os.system(lint)
+        os.system(trunk)
+    
 
    
     
