@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveRoomBundle"
-  s.version      = "1.3.3"
+  s.version      = "1.4.0-rc"
   s.summary      = "AliInteractiveRoomBundle."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live, which implement by Objective-C.
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
   s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'
-  #s.libraries = 'z'  
   s.requires_arc = true
    
 
