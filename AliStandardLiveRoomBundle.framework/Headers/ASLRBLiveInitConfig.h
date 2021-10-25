@@ -39,8 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString* liveCustomData;
 
 /**
- *本场直播弹幕的最大字符个数（即[NSString length]），默认为50，支持外部设置0~50之间的值；
- *所发送弹幕长度超过maxLiveCommentLength时会报错ASLRBLiveRoomCommentLengthExceedsLimit；
+ * 本场直播弹幕的最大字符个数（即[NSString length]），默认为50，支持外部设置0~50之间的值；
+ * 所发送弹幕长度超过maxLiveCommentLength时会报错ASLRBLiveRoomCommentLengthExceedsLimit；
  */
 @property (nonatomic, assign) int8_t maxCommentLength;
 
