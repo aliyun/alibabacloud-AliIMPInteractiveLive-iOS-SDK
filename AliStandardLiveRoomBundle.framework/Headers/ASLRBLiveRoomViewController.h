@@ -121,13 +121,6 @@ NS_ASSUME_NONNULL_BEGIN
                       onSuccess:(void (^)(void))onSuccess
                       onFailure:(void (^)(NSString* errorMessage))onFailure;
 
-///**
-// * 在liveSystemMessageLabel上展示直播系统消息；
-// * @param message  要展示的直播消息内容
-// * @param seconds  展示持续的时间，单位秒
-// */
-//- (void)showLiveSystemMessage:(NSString*)message duration:(float)seconds;
-
 /** **********************************此部分是主播端和观众端共同使用的接口 ************************************ */
 
 /** **********************************此部分是仅主播端使用的接口 ************************************ */
