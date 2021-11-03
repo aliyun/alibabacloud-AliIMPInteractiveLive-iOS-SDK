@@ -35,9 +35,12 @@ typedef NS_ENUM(NSInteger, ASLRBEvent)
     ASLRBCommonEventShareButtonDidClicked,    // 分享按钮点击事件
     ASLRBCommonEventCustomMessageReceived,    // 收到自定义消息，info字段会携带自定义消息内容
     ASLRBCommonEventLiveDataUpdated,          // 直播数据（在线人数、点赞数）更新，info字段会携带更新后数据
-    ASLRBCommonEventAllCommentsBannedOrNot,   // 全员禁言/取消全员禁言，info字段携带是否禁言的标志布尔值
+    ASLRBCommonEventYourCommentsBannedOrNot,    // 个人禁言/取消禁言，info字段携带是否禁言的标志布尔值
+    ASLRBCommonEventAllCommentsBannedOrNot,    // 全员禁言/取消禁言，info字段携带是否禁言的标志布尔值
     ASLRBCommonEventViewWillAppear,           // 视图控制器的viewWillAppear
     ASLRBCommonEventViewWillDisappear,        // 视图控制器的viewWillDisappear
+    ASLRBCommonEventViewDidAppear,           // 视图控制器的viewDidAppear
+    ASLRBCommonEventViewDidDisappear,        // 视图控制器的viewDidDisappear
 };
 
 typedef NS_ENUM(NSInteger, ASLRBLiveRoomError)

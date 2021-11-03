@@ -45,10 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) int8_t maxCommentLength;
 
 /**
- * 本场直播拉流是否开启RTS低延迟观看，默认为NO，只有观众侧设置有效；
+ * 本场直播拉流是否开启RTS低延迟观看，默认为YES，只有观众侧设置有效；
  * 注意，需要增加Rts.framework和ArtcSource.framework后使用；
  */
 @property (nonatomic, assign) BOOL lowDelayLivePlaying;
+
+/**
+ * 本场直播的主播侧推流媒体相关的配置，其类型为已依赖库AlivcLivePusher.framework中的AlivcLivePushConfig类；
+ * 不设置alivcLivePushConfig时默认使用内部标准配置；
+ */
+@property (nonatomic, strong) id alivcLivePushConfig;
 
 @end
 

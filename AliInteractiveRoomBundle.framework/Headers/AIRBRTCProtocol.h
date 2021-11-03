@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AIRBRTCProtocol <NSObject>
 
 /**
+ * RTC配置，具体见AIRBRTCConfig
+ */
+@property (strong, nonatomic) AIRBRTCConfig* config;
+
+/**
  * 摄像头本地预览画面view
  */
 @property (strong, nonatomic) UIView* rtcLocalView;
@@ -61,14 +66,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 加入RTC
- * @param config 相关设置参数，具体见AIRBRTCConfig
+ * @note 旧版本中命名为joinChannelWithConfig
  */
-- (void) joinChannelWithConfig:(AIRBRTCConfig*)config;
+- (void) joinChannel;
 
 /**
  * 离开RTC
+ * @param destroy YES表示结束RTC，NO表示只离开不结束
+ * @note 只有房主可以结束
  */
-- (void) leaveChannel;
+- (void) leaveChannel:(BOOL)destroy;
+
+/**
+ * 离开RTC并结束RTC和旁路直播（如果有的话）
+ * @note 等同于stopBypassLiveStreaming:YES +  leaveChannel:YES
+ */
+//- (void) leaveChannel;
 
 /**
  * 发送邀请其他人加入RTC的消息
@@ -129,7 +142,7 @@ NS_ASSUME_NONNULL_BEGIN
                      onFailure:(void(^)(NSString* errorMessage))onFailure;
 
 /**
- * 关闭/开启本地摄像头
+ * 关闭/开启本地摄像头和本地预览
  * @param mute YES为关闭，NO为开启
  * @param onSuccess 成功的回调
  * @param onFailure 失败的回调
@@ -171,9 +184,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) toggleLocalCamera;
 
 /**
- * 开启旁路推流
+ * 开启旁路直播推流
+ * @param resolutionType 旁路直播分辨率类型，具体见AIRBRTCBypassLiveResolutionType
+ * @note 旧版本中命名为startPublishingBypassLive
  */
-- (void) startPublishingBypassLive;
+- (void) startBypassLiveStreaming:(AIRBRTCBypassLiveResolutionType)resolutionType;
+
+/**
+ * 停止旁路直播推流
+ * @param destroy YES表示结束旁路直播，NO表示只停止推流不结束直播
+ */
+- (void) stopBypassLiveStreaming:(BOOL)destroy;
 
 /**
  * 设置预设的旁路推流的布局
@@ -199,10 +220,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 开始录制
+ * @param resolutionType 录制分辨率类型，具体见AIRBRTCBypassLiveResolutionType
  * @param onSuccess 成功的回调
  * @param onFailure 失败的回调
  */
-- (void) startRecordingOnSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSString* error))onFailure;
+- (void) startRecording:(AIRBRTCBypassLiveResolutionType)resolutionType
+              onSuccess:(void(^)(void))onSuccess
+              onFailure:(void(^)(NSString* error))onFailure;
 
 /**
  * 暂停录制

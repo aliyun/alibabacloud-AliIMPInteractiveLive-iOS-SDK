@@ -53,6 +53,12 @@ NS_ASSUME_NONNULL_BEGIN
  * 是否进行仅音频推流（不录制视频）
  */
 @property (assign, nonatomic) BOOL onlyAudio;
+
+/**
+ * 如果以上配置不能满足需求，可以设置当前config，其类型为已依赖库AlivcLivePusher.framework中的AlivcLivePushConfig类；
+ * 注意，当alivcLivePushConfig配置后，上面的所有配置将失效，以alivcLivePushConfig的内容为准；
+ */
+@property (strong, nonatomic) id alivcLivePushConfig;
 @end
 
 @interface AIRBLivePusherBeautyOptions : NSObject

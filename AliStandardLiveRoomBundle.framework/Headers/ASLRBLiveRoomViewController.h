@@ -7,6 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ASLRBCommonDefines.h"
+#import "ASLRBLiveCommentViewProtocol.h"
+#import "ASLRBLiveRoomAnchorProtocol.h"
+#import "ASLRBLiveRoomAudienceProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) onASLRBLiveRoomErrorInViewController:(ASLRBLiveRoomViewController *)liveRoomVC liveRoomError:(ASLRBLiveRoomError)liveRoomError withErrorMessage:(NSString*)errorMessage;
 @end
 
-@interface ASLRBLiveRoomViewController : UIViewController
+@interface ASLRBLiveRoomViewController : UIViewController<ASLRBLiveRoomAnchorProtocol, ASLRBLiveRoomAudienceProtocol>
 
 /**
  *用来接收事件和错误通知，必传
@@ -63,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 展示评论的view，目前不支持外部定义；注意外部更改commentView的frame时需要使用Masonry的mas_remakeConstraints接口；
  */
-@property (strong, nonatomic) ASLRBLiveCommentView* liveCommentView;
+@property (strong, nonatomic) UIView<ASLRBLiveCommentViewProtocol>* liveCommentView;
 
 /** **********************************此部分是内部已经定义好的UI控件 ************************************ */
 
@@ -99,6 +102,18 @@ NS_ASSUME_NONNULL_BEGIN
            onFailure:(void (^)(ASLRBLiveRoomError code, NSString * errorMessage))onFailure;
 
 /**
+ * 弹幕区发送消息;
+ * @param message 要发送的消息内容
+ * @param extension 自定义扩展字段
+ * @param onSuccess 成功的回调
+ * @param onFailure 失败的回调
+ */
+- (void) sendComment:(NSString *)message
+           extension:(NSDictionary<NSString *,NSString *> *)extension
+           onSuccess:(void (^)(void))onSuccess
+           onFailure:(void (^)(ASLRBLiveRoomError code, NSString * errorMessage))onFailure;
+
+/**
  * 开启/关闭全员禁言，主播端调用
  * @param ban 是否开启禁言全员禁言，为YES则开启，为NO则关闭
  */
@@ -120,75 +135,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) sendCustomMessageToAll:(NSString*)message
                       onSuccess:(void (^)(void))onSuccess
                       onFailure:(void (^)(NSString* errorMessage))onFailure;
-
-/** **********************************此部分是主播端和观众端共同使用的接口 ************************************ */
-
-/** **********************************此部分是仅主播端使用的接口 ************************************ */
-/**
- * 主播端：手动开播，移除livePrestartCustomizedViewHolder，展示开播后的UI界面;
- * @param config 本场直播相关的配置
- */
-- (void) startLiveAndUpdateConfig:(ASLRBLiveInitConfig*)config;
-
-/**
- * 更新直播相关信息；仅开播后在主播侧调用有效；
- * @param config 具体见ASLRBLiveInitConfig
- */
-- (void) updateLiveConfig:(ASLRBLiveInitConfig*)config
-                onSuccess:(void (^)(void))onSuccess
-                onFailure:(void (^)(NSString* errorMessage))onFailure;
-
-/**
- * 切换前后摄像头，主播端调用;
- */
-- (void) switchCamera;
-
-/**
- * 展示/收起美颜面板（已经内部定义好的一个ViewController），主播端调用，建议高度200;
- */
-- (void) showBeautyPanel;
-
-/**
- * 切换麦克风状态（关闭/开启），默认为开启，主播端调用;
- */
-- (void) toggleMutedMicrophone;
-
-/**
- * 开启/关闭直播画面镜像（包括本地画面预览和观众看到的直播画面），默认为关闭，主播端调用;
- * @param mirror 是否开启摄像头画面镜像，为YES则开启，为NO则关闭
- */
-- (void) mirrorLiveVideo:(BOOL)mirror;
-
-/**
- * 暂停/恢复直播推流，默认为推流状态，主播端调用
- * @param pause 是否暂停直播推流，为YES则暂停，为NO则恢复推流
- */
-- (void) pauseLiveStreaming:(BOOL)pause;
-
-/** **********************************此部分是仅主播端使用的接口 ************************************ */
-
-/** **********************************此部分是仅观众端使用的接口 ************************************ */
-
-/**
- * 直播观看时画面的伸缩模式，目前仅支持三种，即UIViewContentModeScaleToFill, UIViewContentModeScaleAspectFit和UIViewContentModeScaleAspectFill
- * 默认为UIViewContentModeScaleAspectFit；
- */
-@property (assign, nonatomic) UIViewContentMode playerViewContentMode;
-
-/**
- * 在不退出当前直播间的情况下重新加载视频播放
- * 仅观众端调用有效；
- */
-- (void) refreshPlayer;
-
-/**
- * 切换观众，主播侧调用无效；
- * @param userID 新的用户ID
- * @param nick     新的用户昵称
- */
-- (void) switchAudience:(NSString*)userID nick:(NSString*)nick;
-
-/** **********************************此部分是仅观众端使用的接口 ************************************ */
 
 @end
 
