@@ -72,6 +72,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 停止直播推流
+ * @param stopLive YES表示结束直播，NO表示只停止推流不结束直播
+ */
+- (void) stopLiveStreaming:(BOOL)stopLive;
+
+/**
+ * 停止直播推流并结束直播
+ * @note 等同于stopLiveStreaming:YES
  */
 - (void) stopLiveStreaming;
 

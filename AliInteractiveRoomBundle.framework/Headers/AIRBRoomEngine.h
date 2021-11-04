@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "AIRBRoomChannelProtocol.h"
 #import "AIRBRoomSceneLiveProtocol.h"
+#import "AIRBRoomSceneClassProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 - (void) onAIRBRoomEngineEvent:(AIRBRoomEngineEvent)event info:(nullable NSDictionary*)info;
 - (void) onAIRBRoomEngineErrorWithCode:(AIRBErrorCode)code errorMessage:(NSString*)msg;
+- (void) onAIRBRoomEngineRequestToken:(void(^)(AIRBRoomEngineAuthToken* token))onTokenGotten;
 
 @optional
 - (void) onLog:(NSString*)message;
@@ -51,9 +53,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 登录
  * @param userID  需要登陆的用户ID, 必须是阿拉伯数字或者英文字母或二者的混合
- * @param token  登陆鉴权需要的token，具体见AIRBRoomEngineAuthToken
  */
-- (void)loginWithUserID:(nonnull NSString*)userID token:(nonnull AIRBRoomEngineAuthToken*)token;
+- (void)loginWithUserID:(nonnull NSString*)userID;
 
 /**
  * 登出当前已登录的用户
@@ -92,6 +93,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (id<AIRBRoomSceneLiveProtocol>) getRoomSceneLive;
+
+- (id<AIRBRoomSceneClassProtocol>) getRoomSceneClass;
+
 @end
 
 NS_ASSUME_NONNULL_END

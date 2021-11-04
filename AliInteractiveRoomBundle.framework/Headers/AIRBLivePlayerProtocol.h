@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) float playerVolume;
 
 /**
- * 是否开启低延迟直播拉流，默认不开；
+ * 是否开启低延迟直播拉流，默认打开；
  * 注意: 只有在start之前设置才会生效；低延迟拉流观看直播会比普通的拉流观看直播方式产生更多的费用，具体情况请到阿里云互动直播控制台了解；
  */
 @property (assign, nonatomic) BOOL lowDelay;

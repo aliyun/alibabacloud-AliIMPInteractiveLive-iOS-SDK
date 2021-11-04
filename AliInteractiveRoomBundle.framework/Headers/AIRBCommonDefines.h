@@ -62,7 +62,10 @@ typedef NS_ENUM(NSInteger, AIRBErrorCode)
     AIRBRTCFailedToReportJoinChannelStatus,
     AIRBRTCFailedToReportLeaveChannelStatus,
     AIRBRTCFailedToCreateBypassLive,
+    AIRBRTCFailedToStartBypassLive,
     AIRBRTCFailedToPublishBypassLive,
+    AIRBRTCFailedToPushBypassLiveStreaming,
+    AIRBRTCFailedToStopBypassLiveStreaming,
     AIRBRTCFailedToGetBypassLiveDetail,
     AIRBRTCFailedToDestroyBypassLive,
     AIRBRTCFailedToSubscribe,
@@ -156,6 +159,7 @@ typedef NS_ENUM(NSInteger, AIRBRoomChannelMessageType)
         "createAt":xxxxx,
         "creatorNick":"5586",
         "creatorOpenId":"5586",
+        "extension" : {}
         "topicId":"xxxxxxxx",
         "type":0
     }
@@ -421,7 +425,10 @@ typedef NS_ENUM(NSInteger, AIRBRoomChannelMessageType)
      */
     AIRBRoomChannelMessageTypeOnCameraMuted,
     
-    AIRBRoomChannelMessageTypeOnScreenShareOpened
+    AIRBRoomChannelMessageTypeOnScreenShareOpened,
+    
+    AIRBRoomChannelMessageTypeSceneClassStarted,
+    AIRBRoomChannelMessageTypeSceneClassStopped,
 };
 
 typedef NS_ENUM(NSInteger, AIRBLivePusherEvent)
@@ -505,6 +512,7 @@ typedef NS_ENUM(NSInteger, AIRBRTCEvent)
     AIRBRTCEventJoinSucceeded,
     AIRBRTCEventLeaveSucceeded,
     AIRBRTCEventBypassLiveStarted,
+    AIRBRTCEventBypassLiveStopped,
     AIRBRTCEventNotification,
     AIRBRTCEventNetworkConnectionLost,      // 网络连接断开
     AIRBRTCEventNetworkReconnectStart,      // 网络开始重连
