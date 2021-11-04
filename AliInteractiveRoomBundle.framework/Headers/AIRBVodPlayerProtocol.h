@@ -114,6 +114,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void) seekToTime:(int64_t)time;
 
+///**
+// * 获取视频的长度
+// */
+//- (int64_t) getDuration;
+
+///**
+// * 获取当前播放位置
+// */
+//- (int64_t) getCurrentPosition;
+
 /**
  * 异步截取当前视频画面，通过delegate返回一个UIImage，具体见onAIRBVodPlayerImageSnapshot
  */
