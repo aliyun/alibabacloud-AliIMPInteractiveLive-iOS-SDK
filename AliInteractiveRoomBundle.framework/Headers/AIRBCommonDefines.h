@@ -46,8 +46,9 @@ typedef NS_ENUM(NSInteger, AIRBErrorCode)
     AIRBLivePlayerFailedToPlayWithFatalError,
     
     AIRBWhiteBoardFailedToCreateWhenServiceUnavailable = 0x400,
+    AIRBWhiteBoardFailedToOpenWhenServiceUnavailable,
     AIRBWhiteBoardFailedToCreateWhenRoleInvalid,
-    AIRBWhiteBoardFailedToCreateWhenTokenInvalid,
+    AIRBWhiteBoardFailedToOpenWhenTokenInvalid,
     AIRBWhiteBoardFailedToDoRecording,
     
     AIRBRTCFailedToJoinWhenNoRTCHere = 0x500,
@@ -59,6 +60,7 @@ typedef NS_ENUM(NSInteger, AIRBErrorCode)
     AIRBRTCFailedToAcceptWhenCalled,
     AIRBRTCFailedToApplyOrWithdrawJoinning,
     AIRBRTCFailedToLeave,
+    AIRBRTCFailedToDestroy,
     AIRBRTCFailedToReportJoinChannelStatus,
     AIRBRTCFailedToReportLeaveChannelStatus,
     AIRBRTCFailedToCreateBypassLive,
@@ -511,8 +513,10 @@ typedef NS_ENUM(NSInteger, AIRBRTCEvent)
     AIRBRTCEventLocalPreviewStarted = 0,
     AIRBRTCEventJoinSucceeded,
     AIRBRTCEventLeaveSucceeded,
+    AIRBRTCEventDestroySucceeded,
     AIRBRTCEventBypassLiveStarted,
     AIRBRTCEventBypassLiveStopped,
+    AIRBRTCEventBypassLiveDestroyed,
     AIRBRTCEventNotification,
     AIRBRTCEventNetworkConnectionLost,      // 网络连接断开
     AIRBRTCEventNetworkReconnectStart,      // 网络开始重连

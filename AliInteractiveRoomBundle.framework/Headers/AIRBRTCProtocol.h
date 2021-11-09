@@ -74,12 +74,13 @@ NS_ASSUME_NONNULL_BEGIN
  * 离开RTC
  * @param destroy YES表示结束RTC，NO表示只离开不结束
  * @note 只有房主可以结束
+ * @note 注意：调用离开房间（AIRBRoomChannelProtocol中的leaveRoom）的时机，应该在离会成功（AIRBRTCEventLeaveSucceeded）或者结束RTC成功（AIRBRTCEventDestroySucceeded）之后
  */
 - (void) leaveChannel:(BOOL)destroy;
 
 /**
  * 离开RTC并结束RTC和旁路直播（如果有的话）
- * @note 等同于stopBypassLiveStreaming:YES +  leaveChannel:YES
+ * @note 旧版本接口，等同于stopBypassLiveStreaming:YES +  leaveChannel:YES
  */
 //- (void) leaveChannel;
 

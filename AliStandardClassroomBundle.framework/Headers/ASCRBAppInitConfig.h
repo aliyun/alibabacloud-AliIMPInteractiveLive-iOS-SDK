@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASCRBCommonDefines.h"
+#import "ASCRBGeneralDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

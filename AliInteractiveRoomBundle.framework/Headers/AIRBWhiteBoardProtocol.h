@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AIRBWhiteBoardDelegate <NSObject>
 - (void) onAIRBWhiteBoardErrorWithCode:(AIRBErrorCode)code message:(NSString*)msg;
 - (void) onAIRBWhiteBoardEvent:(AIRBWhiteBoardEvent)event info:(NSDictionary*)info;
-- (void) requestWhiteBoardAccessTokenWithDocKey:(NSString*)docKey completion:(void (^)(AIRBWhiteBoardToken* token))onGotToken;
 @end
 
 @protocol AIRBWhiteBoardProtocol <NSObject>

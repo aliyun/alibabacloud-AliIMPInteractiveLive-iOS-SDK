@@ -19,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
                                     parameters:(NSDictionary*)params
                                        headers:(NSDictionary*)headers;
 + (NSString *)encodeToPercentEscapeString:(NSString *)input;
++ (BOOL) currentDeviceiPhone;
++ (BOOL) currentDeviceiPad;
++ (BOOL) isNum:(NSString *)checkedString;
++ (BOOL) isNumOrCharacter:(NSString *)checkedString;
 @end
 
 NS_ASSUME_NONNULL_END

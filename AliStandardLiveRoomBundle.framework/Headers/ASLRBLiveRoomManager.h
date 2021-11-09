@@ -22,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (ASLRBLiveRoomManager*)sharedInstance;
 
 /**
+ * 接收内部日志用的block；注意避免block强引用外部对象；
+ * 注意：必须要在globalInitOnceWithConfig之前设置；
+ */
+@property (strong, nonatomic) void(^onLogMessage)(NSString* log);
+
+/**
  * 初始化；收到onSuccess后再进行下一步；
  * @param config 初始化需要的配置信息，具体见ASLRBAppInitConfig
  * @param onSuccess  初始化成功后回调；注意避免block内强引用外部对象造成循环引用

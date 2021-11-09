@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) CGFloat whiteboardContentWidth;
 @property (assign, nonatomic) CGFloat whiteboardContentHeight;
 @property (assign, nonatomic) AIRBWhiteBoardPlayMode playMode; //默认是AIRBWhiteBoardPlayModeLiving
+@property (assign, nonatomic) int32_t permission; //权限：2为读写(默认)，1为只读
 @property (copy, nonatomic) NSString* recordID; //回放模式下传入
 @property (copy, nonatomic) NSString* recordDocKey; //回放模式下传入
 
