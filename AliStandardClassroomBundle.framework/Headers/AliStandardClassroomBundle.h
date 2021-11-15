@@ -15,10 +15,9 @@ FOUNDATION_EXPORT const unsigned char AliStandardClassroomBundleVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AliStandardClassroomBundle/PublicHeader.h>
 
-//#import "ASCRBClassRoomViewController.h"
 #import "ASCRBGeneralDefines.h"
 #import "ASCRBAppInitConfig.h"
-#import "ASCRBClassRoomManager.h"
+#import "ASCRBClassroomManager.h"
 #import "ASCRBClassInitConfig.h"
 #import "ASCRBTeacherViewController4PadProtocol.h"
 #import "ASCRBStudentViewController4PadProtocol.h"

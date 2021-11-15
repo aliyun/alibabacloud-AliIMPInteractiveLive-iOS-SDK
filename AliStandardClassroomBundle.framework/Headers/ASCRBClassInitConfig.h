@@ -29,6 +29,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSString* classTitle;
 
+/**
+ * 是否禁止录屏，非必传，默认为否
+ */
+@property (nonatomic, assign) BOOL screenSecure;
+
+/**
+ * 直播视频画面的水印图片URL，非必传
+ * @note 学生端生效，铺满播放器画面
+ */
+@property (nonatomic, copy) NSString* videoWatermarkUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

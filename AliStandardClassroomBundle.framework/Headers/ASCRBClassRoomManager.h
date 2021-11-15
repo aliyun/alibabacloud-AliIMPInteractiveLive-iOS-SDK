@@ -1,5 +1,5 @@
 //
-//  ASCRBClassRoomManager.h
+//  ASCRBClassroomManager.h
 //  AliStandardClassroomBundle
 //
 //  Created by 刘再勇 on 2021/10/14.
@@ -13,15 +13,21 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@class ASCRBAppInitConfig, ASCRBClassInitConfig, ASCRBClassRoomViewController;
+@class ASCRBAppInitConfig, ASCRBClassInitConfig, ASCRBClassroomVCBaseFunction;
 @protocol ASCRBTeacherViewController4PadProtocol;
 @protocol ASCRBStudentViewController4PadProtocol;
 
-@interface ASCRBClassRoomManager : NSObject
+@interface ASCRBClassroomManager : NSObject
 /**
  * 获取ClassRoomManager全局单例对象
  */
-+ (ASCRBClassRoomManager*)sharedInstance;
++ (ASCRBClassroomManager*)sharedInstance;
+
+/**
+ * 接收内部日志用的block；注意避免block强引用外部对象；
+ * 注意：必须要在globalInitOnceWithConfig之前设置；
+ */
+@property (strong, nonatomic) void(^onLogMessage)(NSString* log);
 
 - (id<ASCRBTeacherViewController4PadProtocol>) createTeacherVC4PadWithAppInitConfig:(ASCRBAppInitConfig*)appInitConifg
                                                                     classInitConfig:(ASCRBClassInitConfig*)classInitConfig;
