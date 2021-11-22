@@ -53,6 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 登录
  * @param userID  需要登陆的用户ID, 必须是阿拉伯数字或者英文字母或二者的混合
+ * @note 旧版本登录接口的token参数通过请求token事件（onAIRBRoomEngineRequestToken:）的回调获取
  */
 - (void)loginWithUserID:(nonnull NSString*)userID;
 

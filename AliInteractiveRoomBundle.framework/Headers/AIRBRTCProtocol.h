@@ -180,9 +180,28 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) subscribeRemoteVideoStream:(BOOL)sub type:(AIRBRTCVideoStreamType)type fromUser:(NSString*)userID;
 
 /**
+ * 订阅/取消订阅屏幕分享流
+ * @param sub YES为订阅，NO为取消订阅
+ * @param userID 要订阅的用户userID
+ */
+- (void) subscribeRemoteScreenShareStream:(BOOL)sub fromUser:(NSString*)userID;
+
+/**
  * 切换前后摄像头
  */
 - (void) toggleLocalCamera;
+
+/**
+ * 开启屏幕分享
+ * @return 0: 成功；其他: 失败
+ */
+- (int)startScreenShare;
+
+/**
+ * 停止屏幕分享
+ * @return 0: 成功；其他: 失败
+ */
+- (int)stopScreenShare;
 
 /**
  * 开启旁路直播推流
@@ -238,10 +257,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 恢复录制
+ * @param resolutionType 录制分辨率类型，具体见AIRBRTCBypassLiveResolutionType
  * @param onSuccess 成功的回调
  * @param onFailure 失败的回调
  */
-- (void) resumeRecordingOnSuccess:(void(^)(void))onSuccess onFailure:(void(^)(NSString* error))onFailure;
+- (void) resumeRecording:(AIRBRTCBypassLiveResolutionType)resolutionType
+               onSuccess:(void(^)(void))onSuccess
+               onFailure:(void(^)(NSString* error))onFailure;
 
 /**
  * 停止录制

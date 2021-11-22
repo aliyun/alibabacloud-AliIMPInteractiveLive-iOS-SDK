@@ -80,6 +80,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) leaveRoom;
 
 /**
+ * 获取房间详情信息
+ */
+- (void) getRoomDetail:(void(^)(NSDictionary* _Nullable roomDetail))onGotten;
+
+/**
  * 更新房间标题
  * @param title 要更新的房间标题
  * @param onSuccess 成功的回调
@@ -98,6 +103,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) updateRoomNotice:(nonnull NSString*)notice
                onSuccess:(void (^)(void))onSuccess
                onFailure:(void (^)(NSString* errorMessage))onFailure;
+               
 
 /**
  * 获取房间内人员列表

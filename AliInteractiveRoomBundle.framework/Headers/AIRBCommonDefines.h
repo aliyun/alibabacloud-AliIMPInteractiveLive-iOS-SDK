@@ -116,6 +116,8 @@ typedef NS_ENUM(NSInteger, AIRBRoomChannelEvent)
         @"notice": 房间公告
         @"onlineCount": 房间实时在线人数
         @"uv": 房间累积uv
+        @"pv": 房间累积pv
+        @"extension" : 创建房间时传入的扩展字段
      }
      
      */
@@ -153,6 +155,13 @@ typedef NS_ENUM(NSInteger, AIRBRoomChannelMessageType)
      }
      */
     AIRBRoomChannelMessageTypeRoomOneUserKickedOut,
+    
+    /* data内容反序列化后内容如下
+     {
+     
+     }
+     */
+    AIRBRoomChannelMessageTypeRoomExtensionUpdated,
     
     /* data内容反序列化后内容如下
     {
