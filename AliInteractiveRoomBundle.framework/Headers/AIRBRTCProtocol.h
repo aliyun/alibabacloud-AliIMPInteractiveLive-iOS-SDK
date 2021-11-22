@@ -193,9 +193,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 开启屏幕分享
+ * @param appGroup 插件和宿主app约定使用相同的appGroup
  * @return 0: 成功；其他: 失败
  */
-- (int)startScreenShare;
+- (int)startScreenShare:(NSString*)appGroup;
 
 /**
  * 停止屏幕分享
