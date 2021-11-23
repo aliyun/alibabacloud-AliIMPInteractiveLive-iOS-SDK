@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * RTC配置，具体见AIRBRTCConfig
+ * @note 在joinChannel之前配置
  */
 @property (strong, nonatomic) AIRBRTCConfig* config;
 

@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AIRBRTCConfig : NSObject
 
 /**
+ * 是否开启纯音频模式，默认为NO（关闭）
+ * - YES: 只有音频推流和拉流（纯音频）
+ * - NO: 音视频都支持
+ * @note 需要在joinChannel之前配置
+ */
+@property (nonatomic, assign) BOOL audioOnlyModeEnabled;
+
+/**
  * 高分辨率视频流（大流）的编码分辨率，默认为640x480
  */
 @property (nonatomic, assign) CGSize videoStreamTypeHighDimensions;

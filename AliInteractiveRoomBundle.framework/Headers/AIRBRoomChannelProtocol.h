@@ -70,9 +70,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) id<AIRBDocumentProtocol> document;
 
 /**
- * 进入房间
+ * @abstract 进入房间
+ * @param userNick 当前用户昵称，不能为空；
  */
 - (void) enterRoomWithUserNick:(NSString*)userNick;
+
+/**
+ * @abstract 进入房间
+ * @param userNick 当前用户昵称，不能为空；
+ * @param extension 当前用户相关的自定义扩展信息
+ */
+- (void) enterRoomWithUserNick:(NSString *)userNick
+                     extension:(NSDictionary<NSString*,NSString*>*)extension;
 
 /**
  * 离开房间
