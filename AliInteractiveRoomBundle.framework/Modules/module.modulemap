@@ -1,0 +1,6 @@
+framework module ObjcLib {
+  umbrella header "AliInteractiveRoomBundle_Umbrella.h"
+
+  export *
+  module * { export * }
+}
