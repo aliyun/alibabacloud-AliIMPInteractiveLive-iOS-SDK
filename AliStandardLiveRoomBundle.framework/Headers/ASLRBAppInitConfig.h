@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASLRBCommonDefines.h"
+#import <AliStandardLiveRoomBundle/ASLRBCommonDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
  *用户昵称，支持任意字符，必传
  */
 @property (nonatomic, copy) NSString* userNick;
+
+/**
+ *用户相关的自定义扩展信息
+ */
+@property (nonatomic, copy) NSDictionary<NSString*,NSString*>* userExtension;
 @end
 
 NS_ASSUME_NONNULL_END

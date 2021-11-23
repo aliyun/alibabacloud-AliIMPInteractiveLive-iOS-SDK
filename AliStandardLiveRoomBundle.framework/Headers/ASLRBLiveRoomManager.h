@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "ASLRBCommonDefines.h"
+#import <AliStandardLiveRoomBundle/ASLRBCommonDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

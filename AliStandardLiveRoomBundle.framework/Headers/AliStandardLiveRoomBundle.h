@@ -16,8 +16,14 @@ FOUNDATION_EXPORT const unsigned char AliStandardLiveRoomBundleVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <AliStandardLiveRoomBundle/PublicHeader.h>
 
 
-#import "ASLRBLiveRoomViewController.h"
-#import "ASLRBCommonDefines.h"
-#import "ASLRBAppInitConfig.h"
-#import "ASLRBLiveRoomManager.h"
-#import "ASLRBLiveInitConfig.h"
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomViewController.h>
+#import <AliStandardLiveRoomBundle/ASLRBCommonDefines.h>
+#import <AliStandardLiveRoomBundle/ASLRBAppInitConfig.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomManager.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveInitConfig.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomAnchorProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomAudienceProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomInfoViewsHolderProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveCommentViewProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomBottomViewsHolderProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomMoreInteractionPanelProtocol.h>

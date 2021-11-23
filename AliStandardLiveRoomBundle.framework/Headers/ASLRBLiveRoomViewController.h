@@ -6,14 +6,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASLRBCommonDefines.h"
-#import "ASLRBLiveCommentViewProtocol.h"
-#import "ASLRBLiveRoomAnchorProtocol.h"
-#import "ASLRBLiveRoomAudienceProtocol.h"
+#import <AliStandardLiveRoomBundle/ASLRBCommonDefines.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveCommentViewProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomAnchorProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomAudienceProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomBottomViewsHolderProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomMoreInteractionPanelProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomInfoViewsHolderProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class ASLRBLiveRoomViewController,ASLRBLiveInitConfig,ASLRBLiveCommentView;
+@protocol ASLRBLiveCommentViewProtocol,ASLRBLiveRoomAnchorProtocol,ASLRBLiveRoomAudienceProtocol,ASLRBLiveRoomBottomViewsHolderProtocol,ASLRBLiveRoomMoreInteractionPanelProtocol,ASLRBLiveRoomInfoViewsHolderProtocol;
 
 
 #pragma mark - ASLRBLiveRoomViewControllerDelegate Interface
@@ -35,26 +39,31 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 主播端：这是一层覆盖在本VC.view上的透明的开播预览层，可以添加预览页的UI，在调用startLive后会被内部自动移除;
+ * 注意，仅主播端存在；
  */
 @property(nonatomic, strong) UIView* _Nullable livePrestartCustomizedViewHolder;
 
 /**
  * 位于屏幕左上位置的用户自定义区域，便于在上面添加自定义控件，比如主播头像等
+ * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* upperLeftCustomizedViewHolder;
 
 /**
  * 位于屏幕右上位置（跟upperLeftCustomizedViewHolder保持水平）的用户自定义区域，便于在上面添加自定义控件，比如退出直播按钮等
+ * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* upperRightCustomizedViewHolder;
 
 /**
  * 位于中间位置的用户自定义区域，便于在上面添加自定义控件
+ * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* middleCustomizedViewHolder;
 
 /**
  * 位于底部位置的用户自定义区域，便于在上面添加自定义控件，比如弹幕输入框、点赞按钮等
+ * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* bottomCustomizedViewHolder;
 
@@ -64,18 +73,67 @@ NS_ASSUME_NONNULL_BEGIN
 /** **********************************此部分是内部已经定义好的UI控件 ************************************ */
 
 /**
- * 展示评论的view，目前不支持外部定义；注意外部更改commentView的frame时需要使用Masonry的mas_remakeConstraints接口；
+ * 直播间左上角头像、人数、点赞数等view集合；支持外部修改；
+ * 注意，如需隐藏，只要实例化upperLeftCustomizedViewHolder即可；
+ */
+@property (strong, nonatomic) UIView<ASLRBLiveRoomInfoViewsHolderProtocol>* liveInfoViewHolder;
+
+/**
+ * 直播间左上角头像下放的公告按钮，外部可以通过设置alpha来隐藏
+ * 注意，如需隐藏，只要实例化middleCustomizedViewHolder即可；
+ */
+@property (strong, nonatomic) UIButton* noticeButton;
+
+/**
+ * 直播间左上角头像下放的直播间内人员按钮，外部可以通过设置alpha来隐藏;
+ * 注意，这个仅存在主播直播间模式下存在；
+ * 注意，如需隐藏，只要实例化middleCustomizedViewHolder即可；
+ */
+@property (strong, nonatomic) UIView* membersButton;
+
+/**
+ * 展示评论的view，目前不支持外部定义；
  */
 @property (strong, nonatomic) UIView<ASLRBLiveCommentViewProtocol>* liveCommentView;
+
+/**
+ * 直播间底部的承载view，包括输入框、点赞、分享按钮等；外部可以在push当前vc前修改；
+ * 注意，如何隐藏，只要实例化bottomCustomizedViewHolder即可；
+ */
+@property (strong, nonatomic) UIView<ASLRBLiveRoomBottomViewsHolderProtocol>* bottomViewsHolder;
+
+/**
+ * 仅主播侧直播间底部“...”按钮点击后出现的面板；暂不支持外部修改内容；
+ */
+@property (strong, nonatomic) UIView<ASLRBLiveRoomMoreInteractionPanelProtocol>* moreInteractionPanel;
+
+/**
+ * 直播间右上角的关闭按钮；支持外部更改样式；
+ * 注意，如需隐藏，只要实例化upperRightCustomizedViewHolder即可；
+ */
+@property (strong, nonatomic) UIButton* exitButton;
 
 /** **********************************此部分是内部已经定义好的UI控件 ************************************ */
 
 /** **********************************此部分是主播端和观众端共同使用的接口 ************************************ */
 
 /**
- *直播间背景图，不传时则使用内部默认图；
+ *直播间背景图，会在直播前和直播结束都出现；
+ *注意，只会出现在观众端；
  */
-@property (nonatomic, strong) UIImage* backgroundImage;
+@property (nonatomic, strong) UIImage* backgroundImage DEPRECATED_MSG_ATTRIBUTE("建议使用新接口");
+
+/**
+ *直播间直播开始前的背景图；优先级高于backgroundImage；
+ *仅直播模式下观众端有效；
+ */
+@property (nonatomic, strong) UIImage* backgroundImageBeforeLiving;
+
+/**
+ *直播间直播结束后的背景图；优先级高于backgroundImage；
+ *仅直播模式下观众端有效；
+ */
+@property (nonatomic, strong) UIImage* backgroundImageAfterLiving;
 
 /**
  * 在push当前vc之前调用，用来做进入直播页面前的准备工作；注意在onSuccess之后才可以push当前vc；

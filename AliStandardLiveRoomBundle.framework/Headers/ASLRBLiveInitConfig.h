@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASLRBCommonDefines.h"
+#import <AliStandardLiveRoomBundle/ASLRBCommonDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -55,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
  * 不设置alivcLivePushConfig时默认使用内部标准配置；
  */
 @property (nonatomic, strong) id alivcLivePushConfig;
+
+/**
+ * 直播观众侧手机切后台是否继续播放，默认不允许播放
+ */
+@property (nonatomic, assign) BOOL enableBackgroundLivePlaying;
 
 @end
 
