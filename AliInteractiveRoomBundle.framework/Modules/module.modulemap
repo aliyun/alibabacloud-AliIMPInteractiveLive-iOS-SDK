@@ -1,4 +1,4 @@
-framework module ObjcLib {
+framework module AliInteractiveRoomBundle {
   umbrella header "AliInteractiveRoomBundle_Umbrella.h"
 
   export *
