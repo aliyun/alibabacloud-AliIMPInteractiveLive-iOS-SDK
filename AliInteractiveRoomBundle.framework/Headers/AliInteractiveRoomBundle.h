@@ -34,5 +34,12 @@
 #import <AliInteractiveRoomBundle/AIRBWhiteBoardConfig.h>
 #import <AliInteractiveRoomBundle/AIRBWhiteBoardToken.h>
 
+#import <AliInteractiveRoomBundle/AIRBDocumentProtocol.h>
+
+#import <AliInteractiveRoomBundle/AIRBVodPlayerProtocol.h>
+
+#import <AliInteractiveRoomBundle/AIRBRoomSceneClassProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomSceneLiveProtocol.h>
+
 #import <AliInteractiveRoomBundle/AIRBUtility.h>
 
