@@ -8,9 +8,9 @@
 
 #import "AIRBCommonDefines.h"
 #import <Foundation/Foundation.h>
-#import "AIRBRoomChannelProtocol.h"
-#import "AIRBRoomSceneLiveProtocol.h"
-#import "AIRBRoomSceneClassProtocol.h"
+#import <AliInteractiveRoomBundle/AIRBRoomChannelProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomSceneLiveProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomSceneClassProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

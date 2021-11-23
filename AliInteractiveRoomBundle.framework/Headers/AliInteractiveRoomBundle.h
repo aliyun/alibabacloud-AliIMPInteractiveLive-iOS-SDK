@@ -6,33 +6,33 @@
 //  Copyright © 2021 AliYun. All rights reserved.
 //
 
-#import "AIRBCommonDefines.h"
+#import <AliInteractiveRoomBundle/AIRBCommonDefines.h>
 
-#import "AIRBRoomEngine.h"
-#import "AIRBRoomEngineConfig.h"
-#import "AIRBRoomEngineAuthToken.h"
-#import "AIRBRoomBasicInfo.h"
-#import "AIRBRoomEngineRoomListResponse.h"
+#import <AliInteractiveRoomBundle/AIRBRoomEngine.h>
+#import <AliInteractiveRoomBundle/AIRBRoomEngineConfig.h>
+#import <AliInteractiveRoomBundle/AIRBRoomEngineAuthToken.h>
+#import <AliInteractiveRoomBundle/AIRBRoomBasicInfo.h>
+#import <AliInteractiveRoomBundle/AIRBRoomEngineRoomListResponse.h>
 
-#import "AIRBRoomChannelProtocol.h"
-#import "AIRBRoomChannelUserListResponse.h"
-#import "AIRBRoomChannelUser.h"
+#import <AliInteractiveRoomBundle/AIRBRoomChannelProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomChannelUserListResponse.h>
+#import <AliInteractiveRoomBundle/AIRBRoomChannelUser.h>
 
-#import "AIRBChatProtocol.h"
-#import "AIRBRoomChannelComment.h"
-#import "AIRBRoomChannelCommentsResponse.h"
+#import <AliInteractiveRoomBundle/AIRBChatProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomChannelComment.h>
+#import <AliInteractiveRoomBundle/AIRBRoomChannelCommentsResponse.h>
 
-#import "AIRBLivePlayerProtocol.h"
-#import "AIRBLivePusherProtocol.h"
-#import "AIRBLivePusherOptions.h"
+#import <AliInteractiveRoomBundle/AIRBLivePlayerProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBLivePusherProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBLivePusherOptions.h>
 
-#import "AIRBRTCProtocol.h"
-#import "AIRBRTCConfig.h"
-#import "AIRBRTCBypassLiveLayoutPeerVideoModel.h"
+#import <AliInteractiveRoomBundle/AIRBRTCProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRTCConfig.h>
+#import <AliInteractiveRoomBundle/AIRBRTCBypassLiveLayoutPeerVideoModel.h>
 
-#import "AIRBWhiteBoardProtocol.h"
-#import "AIRBWhiteBoardConfig.h"
-#import "AIRBWhiteBoardToken.h"
+#import <AliInteractiveRoomBundle/AIRBWhiteBoardProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBWhiteBoardConfig.h>
+#import <AliInteractiveRoomBundle/AIRBWhiteBoardToken.h>
 
-#import "AIRBUtility.h"
+#import <AliInteractiveRoomBundle/AIRBUtility.h>
 

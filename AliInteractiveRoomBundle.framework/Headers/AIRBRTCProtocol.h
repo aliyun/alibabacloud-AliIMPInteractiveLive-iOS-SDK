@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "AIRBCommonDefines.h"
+#import <AliInteractiveRoomBundle/AIRBCommonDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

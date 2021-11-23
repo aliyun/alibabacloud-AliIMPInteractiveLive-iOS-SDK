@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AIRBLivePlayerProtocol.h"
-#import "AIRBLivePusherProtocol.h"
-#import "AIRBRTCProtocol.h"
-#import "AIRBChatProtocol.h"
-#import "AIRBWhiteBoardProtocol.h"
-#import "AIRBVodPlayerProtocol.h"
-#import "AIRBDocumentProtocol.h"
+#import <AliInteractiveRoomBundle/AIRBLivePlayerProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBLivePusherProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRTCProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBChatProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBWhiteBoardProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBVodPlayerProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBDocumentProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

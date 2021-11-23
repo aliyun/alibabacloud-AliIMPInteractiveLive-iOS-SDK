@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AIRBRoomBasicInfo.h"
+#import <AliInteractiveRoomBundle/AIRBRoomBasicInfo.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
