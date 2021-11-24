@@ -38,12 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AIRBRTCProtocol <NSObject>
 
 /**
- * RTC配置，具体见AIRBRTCConfig
- * @note 在joinChannel之前配置
- */
-@property (strong, nonatomic) AIRBRTCConfig* config;
-
-/**
  * 摄像头本地预览画面view
  */
 @property (strong, nonatomic) UIView* rtcLocalView;
@@ -64,6 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
  * 用来接收RTC相关的事件和错误
  */
 @property (weak, nonatomic) id<AIRBRTCDelegate> delegate;
+
+/**
+ * RTC配置，具体见AIRBRTCConfig
+ * @note 在joinChannel之前配置
+ */
+- (void) setConfig:(AIRBRTCConfig*)config;
 
 /**
  * 加入RTC

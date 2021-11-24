@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) UIViewContentMode playerViewContentMode;
 
 /**
+ * 在不退出当前直播间的情况下暂停直播播放；要继续播放的时候，请调用refreshPlayer
+ */
+- (void) pausePlayer;
+
+/**
  * 在不退出当前直播间的情况下重新加载视频播放
  * 仅观众端调用有效；
  */

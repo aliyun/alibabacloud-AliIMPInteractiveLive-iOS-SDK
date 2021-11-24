@@ -45,25 +45,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 位于屏幕左上位置的用户自定义区域，便于在上面添加自定义控件，比如主播头像等
- * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* upperLeftCustomizedViewHolder;
 
 /**
  * 位于屏幕右上位置（跟upperLeftCustomizedViewHolder保持水平）的用户自定义区域，便于在上面添加自定义控件，比如退出直播按钮等
- * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* upperRightCustomizedViewHolder;
 
 /**
  * 位于中间位置的用户自定义区域，便于在上面添加自定义控件
- * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* middleCustomizedViewHolder;
 
 /**
  * 位于底部位置的用户自定义区域，便于在上面添加自定义控件，比如弹幕输入框、点赞按钮等
- * 注意，直播回放模式下不能使用；
  */
 @property (strong, nonatomic) UIView* bottomCustomizedViewHolder;
 
