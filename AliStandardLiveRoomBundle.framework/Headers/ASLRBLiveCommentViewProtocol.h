@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param seconds 消息停留的秒数
  */
 - (void)insertLiveSystemMessage:(NSString*)message duration:(float)seconds;
+
 @end
 
 NS_ASSUME_NONNULL_END
