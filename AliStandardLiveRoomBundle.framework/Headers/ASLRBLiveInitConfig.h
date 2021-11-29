@@ -61,6 +61,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL enableBackgroundLivePlaying;
 
+/**
+ * 直播回放逻辑，默认关闭
+ */
+@property (nonatomic, assign) BOOL enableLivePlayback;
+
 @end
 
 NS_ASSUME_NONNULL_END
