@@ -13,6 +13,14 @@ typedef NS_ENUM(NSInteger, ASLRBUserRole)
     ASLRBUserRoleAudience     // 直播中的观众身份，进行拉流（观看直播）
 };
 
+typedef NS_ENUM(NSInteger, ASLRBLiveRoomType)
+{
+    ASLRBLiveRoomTypeNone = 0,
+    ASLRBLiveRoomTypeLivePushing,      // 主播正在进行推流的直播间
+    ASLRBLiveRoomTypeLivePlaying,      // 直播正在进行拉流的直播间
+    ASLRBLiveRoomTypeLivePlayback      // 直播回放观看的直播间
+};
+
 typedef NS_ENUM(NSInteger, ASLRBEvent)
 {
     ASLRBAnchorEventLivePusherStarted = 0,    // 主播端：直播开始（推流开始）事件，info字段会携带liveID

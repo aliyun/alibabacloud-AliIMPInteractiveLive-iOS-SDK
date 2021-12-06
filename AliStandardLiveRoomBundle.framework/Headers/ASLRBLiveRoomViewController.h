@@ -10,6 +10,7 @@
 #import <AliStandardLiveRoomBundle/ASLRBLiveCommentViewProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomAnchorProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomAudienceProtocol.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomPlaybackProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomBottomViewsHolderProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomMoreInteractionPanelProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomInfoViewsHolderProtocol.h>
@@ -28,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) onASLRBLiveRoomErrorInViewController:(ASLRBLiveRoomViewController *)liveRoomVC liveRoomError:(ASLRBLiveRoomError)liveRoomError withErrorMessage:(NSString*)errorMessage;
 @end
 
-@interface ASLRBLiveRoomViewController : UIViewController<ASLRBLiveRoomAnchorProtocol, ASLRBLiveRoomAudienceProtocol>
+@interface ASLRBLiveRoomViewController : UIViewController<ASLRBLiveRoomAnchorProtocol, ASLRBLiveRoomAudienceProtocol, ASLRBLiveRoomPlaybackProtocol>
 
 /**
  *用来接收事件和错误通知，必传
@@ -130,6 +131,11 @@ NS_ASSUME_NONNULL_BEGIN
  *仅直播模式下观众端有效；
  */
 @property (nonatomic, strong) UIImage* backgroundImageAfterLiving;
+
+/**
+ *直播间（ViewController）的type，具体见ASLRBLiveRoomType说明，默认为ASLRBLiveRoomTypeNone，即未知类型；
+ */
+@property (nonatomic, assign) ASLRBLiveRoomType liveRoomType;
 
 /**
  * 在push当前vc之前调用，用来做进入直播页面前的准备工作；注意在onSuccess之后才可以push当前vc；
