@@ -52,6 +52,30 @@ NS_ASSUME_NONNULL_BEGIN
  * @param pause 是否暂停直播推流，为YES则暂停，为NO则恢复推流
  */
 - (void) pauseLiveStreaming:(BOOL)pause;
+
+/**
+ * @brief 开启/关闭某user的禁言
+ * @param userID 要开启或关闭禁言的用户id
+ * @param banSeconds 要禁言的秒数（注意，取消禁言时可不传入；注意，需要永久禁言时可传入0）
+ * @param ban YES即开启禁言，NO即关闭禁言
+ */
+- (void) banCommentsOfUser:(NSString*)userID bannedSeconds:(int32_t)banSeconds ban:(BOOL)ban;
+
+/**
+ * @brief 开启/关闭全员禁言，主播端调用
+ * @param ban 是否开启禁言全员禁言，为YES则开启，为NO则关闭
+ */
+- (void) banAllComments:(BOOL)ban;
+
+/**
+ * @brief 主播踢人
+ * @param kickedSeconds 踢出时长（踢出后多久才能进）
+ */
+- (void) kickUser:(NSString*)userID
+    kickedSeconds:(int32_t)kickedSeconds
+        onSuccess:(void(^)(void))onSuccess
+        onFailure:(void(^)(NSString* errorMessage))onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END

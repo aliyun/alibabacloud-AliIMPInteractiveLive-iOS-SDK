@@ -16,15 +16,42 @@ NS_ASSUME_NONNULL_BEGIN
 @class AIRBRoomChannelUserListResponse;
 @class AIRBRTCConfig;
 @class AIRBRTCBypassLiveLayoutPeerVideoModel;
+@class AIRBRTCUserVolumeInfo;
 
 @protocol AIRBRTCDelegate <NSObject>
 - (void) onAIRBRTCErrorWithCode:(AIRBErrorCode)code message:(NSString*)msg;
 - (void) onAIRBRTCEvent:(AIRBRTCEvent)event info:(NSDictionary*)info;
+
+/**
+ * 相机流/屏幕共享流画面可用时触发的消息
+ * @param userID 画面可用的userID
+ * @param view 对应的画面
+ * @param type 类型（相机流/屏幕共享流）
+ */
 - (void) onAIRBRTCRemotePeerViewAvailable:(NSString*)userID view:(UIView*)view type:(AIRBRTCVideoViewType)type;
+
+/**
+ * 第一帧视频帧显示时触发的消息
+ * @param userID 画面可用的userID
+ * @param type 类型（相机流/屏幕共享流）
+ */
 - (void) onAIRBRTCRemotePeerVideoFirstFrameDrawn:(NSString*)userID type:(AIRBRTCVideoViewType)type;
 
 /**
- * @brief 网络质量变化时发出的消息
+ * 当前正在说话的人
+ * @param userID 说话人userID, 为"0"表示本地说话人。其返回的是当前时间段内声音最大的用户ID，而不是瞬时声音最大的用户ID
+*/
+- (void) onAIRBRTCActiveSpeaker:(NSString*)userID;
+
+/**
+ * 用户的音频音量、语音状态和userID回调
+ * @param volumeInfoArray 表示回调用户音量信息数组，包含用户userID、语音状态以及音量，userID为"0"表示本地说话人。
+ * @param totalVolume 混音后的总音量，范围[0,255]。在本地用户的回调中，totalVolume为本地用户混音后的音量；在远端用户的回调中，totalVolume为所有说话者混音后的总音量
+ */
+- (void)onAIRBRTCAudioVolumeCallback:(NSArray <AIRBRTCUserVolumeInfo *> *_Nullable)volumeInfoArray totalVolume:(int)totalVolume;
+
+/**
+ * 网络质量变化时发出的消息
  * @param userID 网络质量发生变化的userID
  * @param upQuality  上行网络质量
  * @param downQuality  下行网络质量
@@ -43,13 +70,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIView* rtcLocalView;
 
 /**
- * 是否开启本地预览镜像，默认为是
+ * 是否开启本地相机预览镜像，默认为是
  * @note 仅对前置摄像头画面生效
  */
 @property (nonatomic, assign) BOOL previewMirrorEnabled;
 
 /**
- * 是否开启视频流镜像，默认为否
+ * 是否开启相机流镜像，默认为否
  * @note 仅对前置摄像头画面生效
  */
 @property (nonatomic, assign) BOOL videoStreamMirrorEnabled;
@@ -98,11 +125,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) removePeers:(NSArray<NSString*>*)userIDs;
 
 /**
- * 发送同意其他人加入RTC的申请的消息
- * @param userID 被同意申请的userID
+ * 发送同意/拒绝其他人加入RTC的申请的消息
+ * @param approve YES表示同意，NO表示拒绝
+ * @param userID 被同意/拒绝申请的userID
  */
 - (void) approveJoiningApplication:(BOOL)approve fromPeer:(NSString*)userID; //approveRTCJoiningApplication
 
+/**
+ * 发送同意/拒绝连麦申请的消息
+ * @param accept YES表示同意，NO表示拒绝
+ */
 - (void) acceptCall:(BOOL)accept;
 
 /**
@@ -226,7 +258,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param onFailure 失败的回调
  */
 - (void) setBypassLiveLayout:(AIRBRTCBypassLiveLayoutType)type
-                     userIDs:(NSArray<NSString*>*) userIDs
+                     userIDs:(NSArray<NSString*>* _Nonnull) userIDs
                    onSuccess:(void(^)(void))onSuccess
                    onFailure:(void(^)(NSString* error))onFailure;
 

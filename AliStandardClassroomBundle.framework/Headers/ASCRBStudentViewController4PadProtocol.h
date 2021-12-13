@@ -10,15 +10,26 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - ASCRBTeacherViewController4PadProtocolDelegate Interface
+@protocol ASCRBStudentViewController4PadProtocolDelegate <NSObject>
+
+- (void) onASCRBStudentViewController4Pad:(id<ASCRBStudentViewController4PadProtocol>)classroomVC classroomEvent:(ASCRBClassroomEvent)classroomEvent info:(NSDictionary*)info;
+- (void) onASCRBStudentViewController4Pad:(id<ASCRBStudentViewController4PadProtocol>)classroomVC classroomError:(ASCRBClassroomError)classroomError withErrorMessage:(NSString*)errorMessage;
+
+@end
+
 @protocol ASCRBStudentViewController4PadProtocol <NSObject>
 
 /**
- * 在push当前vc之前调用，用来做进入课堂页面前的准备工作；注意在onSuccess之后才可以push当前vc；
- * @param onSuccess  setup成功时回调，如果是老师并且之前没有传入class_id，此时会回传创建直播成功后的class_id；注意避免block内强引用外部对象造成循环引用
- * @param onFailure  setup失败时回调，会有具体的错误信息；注意避免block内强引用外部对象造成循环引用;
+ * 用来接收事件和错误通知，必传
  */
-- (void) setupOnSuccess:(void(^)(NSString* classID))onSuccess
-              onFailure:(void(^)(NSString* errorMessage))onFailure;
+@property (weak, nonatomic) id<ASCRBStudentViewController4PadProtocolDelegate> delegate;
+
+/**
+ * 用来做进入课堂页面前的准备工作
+ * @note 如果成功，会收到ASCRBClassroomEventSetupSucceed事件，注意在收到成功事件之后才可以push当前vc；如果失败，会收到ASCRBTeacherErrorFailedToSetup错误
+ */
+- (void) setup;
 
 
 @end

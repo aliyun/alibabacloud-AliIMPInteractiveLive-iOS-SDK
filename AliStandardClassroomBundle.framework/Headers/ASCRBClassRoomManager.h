@@ -8,14 +8,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "ASCRBGeneralDefines.h"
+#import <AliStandardClassroomBundle/ASCRBGeneralDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@class ASCRBAppInitConfig, ASCRBClassInitConfig, ASCRBClassroomVCBaseFunction;
+@class ASCRBAppInitConfig, ASCRBClassInitConfig, ASCRBClassScene;
 @protocol ASCRBTeacherViewController4PadProtocol;
 @protocol ASCRBStudentViewController4PadProtocol;
+@protocol ASCRBStudentViewController4PhoneProtocol;
 
 @interface ASCRBClassroomManager : NSObject
 /**
@@ -33,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
                                                                     classInitConfig:(ASCRBClassInitConfig*)classInitConfig;
 
 - (id<ASCRBStudentViewController4PadProtocol>) createStudentVC4PadWithAppInitConfig:(ASCRBAppInitConfig*)appInitConifg
+                                                                    classInitConfig:(ASCRBClassInitConfig*)classInitConfig;
+
+- (id<ASCRBStudentViewController4PhoneProtocol>) createStudentVC4PhoneWithAppInitConfig:(ASCRBAppInitConfig*)appInitConifg
                                                                     classInitConfig:(ASCRBClassInitConfig*)classInitConfig;
 @end
 

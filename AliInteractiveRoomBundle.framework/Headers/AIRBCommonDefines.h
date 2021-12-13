@@ -50,6 +50,8 @@ typedef NS_ENUM(NSInteger, AIRBErrorCode)
     AIRBWhiteBoardFailedToCreateWhenRoleInvalid,
     AIRBWhiteBoardFailedToOpenWhenTokenInvalid,
     AIRBWhiteBoardFailedToDoRecording,
+    AIRBWhiteBoardFailedToReportWhiteboardPageOperate,
+    AIRBWhiteBoardFailedToGetWhiteboardPageInfo,
     
     AIRBRTCFailedToJoinWhenNoRTCHere = 0x500,
     AIRBRTCFailedToGetToken,
@@ -596,9 +598,10 @@ typedef NS_ENUM(NSInteger, AIRBWhiteBoardPlayMode){
 };
 
 typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveLayoutType){
-    AIRBRTCBypassLiveLayoutTypeOnePeer = 1,     // 一宫格
-    AIRBRTCBypassLiveLayoutTypeFivePeer = 2,    // 五宫格（一大四小）
-    AIRBRTCBypassLiveLayoutTypeNinePeer = 3     // 九宫格
+    AIRBRTCBypassLiveLayoutTypeOnePeer = 1,     // 相机流一宫格
+    AIRBRTCBypassLiveLayoutTypeFivePeer = 2,    // 相机流五宫格（一大四小）
+    AIRBRTCBypassLiveLayoutTypeNinePeer = 3,    // 相机流九宫格
+    AIRBRTCBypassLiveLayoutTypeScreenShare = 4, // 屏幕共享流
 };
 
 typedef NS_ENUM(NSInteger, AIRBRTCBypassLiveResolutionType){

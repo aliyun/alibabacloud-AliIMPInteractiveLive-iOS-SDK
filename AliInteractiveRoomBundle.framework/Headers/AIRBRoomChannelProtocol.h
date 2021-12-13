@@ -136,6 +136,18 @@ NS_ASSUME_NONNULL_BEGIN
                       onSuccess:(void (^)(void))onSuccess
                       onFailure:(void (^)(NSString* errorMessage))onFailure;
 
+/**
+ * 从房间内踢出某人
+ * @param kickUserID 被踢人的用户id
+ * @param kickedSeconds 踢出后不能再次进入当前房间的秒数
+ * @param onSuccess 成功的回调
+ * @param onFailure 失败的回调
+ */
+- (void) kickRoomUserWithUserID:(nonnull NSString*)kickUserID
+                  kickedSeconds:(int32_t)kickedSeconds
+                      onSuccess:(void (^)(void))onSuccess
+                      onFailure:(void (^)(NSString* errorMessage))onFailure;
+
 ///**
 // * 在房间内发送消息
 // * @param message 消息内容

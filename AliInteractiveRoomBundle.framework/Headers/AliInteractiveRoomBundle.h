@@ -28,6 +28,7 @@
 
 #import <AliInteractiveRoomBundle/AIRBRTCProtocol.h>
 #import <AliInteractiveRoomBundle/AIRBRTCConfig.h>
+#import <AliInteractiveRoomBundle/AIRBRTCUserVolumeInfo.h>
 #import <AliInteractiveRoomBundle/AIRBRTCBypassLiveLayoutPeerVideoModel.h>
 
 #import <AliInteractiveRoomBundle/AIRBWhiteBoardProtocol.h>

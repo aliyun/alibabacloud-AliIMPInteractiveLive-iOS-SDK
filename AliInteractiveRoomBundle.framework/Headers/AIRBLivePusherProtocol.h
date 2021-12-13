@@ -61,6 +61,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) startLiveStreaming;
 
 /**
+ * 重新开始直播推流，适用于断网后恢复重推
+ */
+- (void) restartLiveStreaming;
+
+/**
  * 暂停直播推流
  */
 - (void) pauseLiveStreaming;

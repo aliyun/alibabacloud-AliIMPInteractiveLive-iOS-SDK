@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, ASLRBEvent)
     ASLRBAnchorEventLivePusherStreamingPoorNetworkEnd, //主播端推流从弱网状态恢复
     ASLRBAnchorEventLivePusherStreamingReconnectStart, //主播端推流网络开始重连
     ASLRBAnchorEventLivePusherStreamingReconnectSuccess, //主播端推流网络重连成功
+    ASLRBAnchorEventLivePusherStreamingReconnectFailed, //主播端推流网络重连失败，不再重连
     ASLRBAnchorEventLivePusherStreamingNetworkConnectionLost, //主播端推流网络断开
     ASLRBAnchorEventLivePusherStopped,        // 主播端：直播结束（推流结束）事件
     
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, ASLRBEvent)
     ASLRBCommonEventLiveDataUpdated,          // 直播数据（在线人数、点赞数）更新，info字段会携带更新后数据
     ASLRBCommonEventYourCommentsBannedOrNot,    // 个人禁言/取消禁言，info字段携带是否禁言的标志布尔值
     ASLRBCommonEventAllCommentsBannedOrNot,    // 全员禁言/取消禁言，info字段携带是否禁言的标志布尔值
+    ASLRBCommonEventLiveExtensionUpdated,     // 收到直播扩展字段更新的消息，info字段会携带具体内容
     ASLRBCommonEventViewWillAppear,           // 视图控制器的viewWillAppear
     ASLRBCommonEventViewWillDisappear,        // 视图控制器的viewWillDisappear
     ASLRBCommonEventViewDidAppear,           // 视图控制器的viewDidAppear

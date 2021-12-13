@@ -12,22 +12,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ASLRBAppInitConfig : NSObject
 /**
- *在阿里云互动直播控制台上开通应用后获得，必传
+ *在阿里云低代码音视频工厂控制台上开通应用后获得，必传
  */
 @property (nonatomic, copy) NSString* appKey;
 
 /**
- *在阿里云互动直播控制台上开通应用后获得，必传
+ *在阿里云低代码音视频工厂控制台上开通应用后获得，必传
  */
 @property (nonatomic, copy) NSString* appID;
 
 /**
- *已经部署了互动直播服务的用户服务器地址，必传，例如https://xxx.com
+ *已经部署了低代码音视频工厂直播样板间服务的用户服务器地址，必传，例如https://xxx.com
  */
 @property (nonatomic, copy) NSString* appServerUrl;
 
 /**
- *在阿里云互动直播控制台上开通应用后获得，必传
+ *在阿里云低代码音视频工厂控制台上开通应用后获得，必传
  */
 @property (nonatomic, copy) NSString* appServerSignSecret;
 

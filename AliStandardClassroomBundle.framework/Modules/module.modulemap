@@ -1,6 +1,0 @@
-framework module AliStandardClassroomBundle {
-  umbrella header "AliStandardClassroomBundle.h"
-
-  export *
-  module * { export * }
-}

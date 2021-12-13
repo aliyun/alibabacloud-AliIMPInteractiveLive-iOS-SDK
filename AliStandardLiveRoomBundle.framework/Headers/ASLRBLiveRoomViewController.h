@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 位于屏幕左上位置的用户自定义区域，便于在上面添加自定义控件，比如主播头像等
  */
-@property (strong, nonatomic) UIView* upperLeftCustomizedViewHolder;
+@property (strong, nonatomic) UIView* upperLeftCustomizedViewHolder DEPRECATED_MSG_ATTRIBUTE("建议使用liveInfoViewHolder");
 
 /**
  * 位于屏幕右上位置（跟upperLeftCustomizedViewHolder保持水平）的用户自定义区域，便于在上面添加自定义控件，比如退出直播按钮等
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 位于底部位置的用户自定义区域，便于在上面添加自定义控件，比如弹幕输入框、点赞按钮等
  */
-@property (strong, nonatomic) UIView* bottomCustomizedViewHolder;
+@property (strong, nonatomic) UIView* bottomCustomizedViewHolder DEPRECATED_MSG_ATTRIBUTE("建议使用bottomViewsHolder");
 
 /** **********************************此部分各种Holder是用来承载业务方自定义的各种UI控件的背景view ************************************ */
 
@@ -172,12 +172,6 @@ NS_ASSUME_NONNULL_BEGIN
            extension:(NSDictionary<NSString *,NSString *> *)extension
            onSuccess:(void (^)(void))onSuccess
            onFailure:(void (^)(ASLRBLiveRoomError code, NSString * errorMessage))onFailure;
-
-/**
- * 开启/关闭全员禁言，主播端调用
- * @param ban 是否开启禁言全员禁言，为YES则开启，为NO则关闭
- */
-- (void) banAllComments:(BOOL)ban;
 
 /**
  * 点赞，一次一个，内部会对短时间内的多次点赞进行聚合;

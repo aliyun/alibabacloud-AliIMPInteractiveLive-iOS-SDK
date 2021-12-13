@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) resumeReplay;
 - (void) seek:(int64_t)timestamp;
 - (void) updateContentWidth:(CGFloat)width contentHeight:(CGFloat)height;
+- (void) addPagesWithDocumentID:(NSString*)documentID backgroundImages:(NSArray<NSString*>*)backgroundImageUrlArray;
 - (void) addPagesWithBackgroundImages:(NSArray<NSString*>*) backgroundImageUrlArray;
 - (void) destroy;
 @end

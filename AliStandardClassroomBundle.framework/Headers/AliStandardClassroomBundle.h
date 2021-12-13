@@ -21,4 +21,5 @@ FOUNDATION_EXPORT const unsigned char AliStandardClassroomBundleVersionString[];
 #import "ASCRBClassInitConfig.h"
 #import "ASCRBTeacherViewController4PadProtocol.h"
 #import "ASCRBStudentViewController4PadProtocol.h"
+#import "ASCRBStudentViewController4PhoneProtocol.h"
 
