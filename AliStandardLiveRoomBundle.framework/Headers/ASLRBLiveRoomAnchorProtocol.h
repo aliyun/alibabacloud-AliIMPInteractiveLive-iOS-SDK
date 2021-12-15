@@ -84,6 +84,16 @@ NS_ASSUME_NONNULL_BEGIN
         onSuccess:(void(^)(void))onSuccess
         onFailure:(void(^)(NSString* errorMessage))onFailure;
 
+/**
+ * @brief 获取本直播间内人员列表，具体信息在response中的ASLRBLiveRoomUserModel
+ * @param pageNum  分页index，从1开始
+ * @param pageSize  每页的数量
+ */
+- (void) getLiveUserListWithPageNum:(int32_t)pageNum
+                           pageSize:(int32_t)pageSize
+                          onSuccess:(void (^)(NSDictionary* response))onSuccess
+                          onFailure:(void (^)(NSString* errorMessage))onFailure;
+
 @end
 
 NS_ASSUME_NONNULL_END

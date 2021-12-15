@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) NSString* liveTitle;
 @property (copy, nonatomic) NSString* liveNotice;
 @property (copy, nonatomic) NSString* liveCoverURL;
-@property (copy, nonatomic) NSString* liveCustomData;
+@property (copy, nonatomic) NSDictionary<NSString*,NSString*>* liveCustomData;
 @end
 
 NS_ASSUME_NONNULL_END

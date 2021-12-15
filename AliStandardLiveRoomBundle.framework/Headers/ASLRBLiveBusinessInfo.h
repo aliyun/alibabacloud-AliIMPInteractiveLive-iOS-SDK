@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *@brief 本场直播的自定义数据，非必传，只有主播侧设置有效
  */
-@property (nonatomic, copy) NSString* liveCustomData;
+@property (nonatomic, copy) NSDictionary<NSString*,NSString*>* liveCustomData;
 @end
 
 NS_ASSUME_NONNULL_END

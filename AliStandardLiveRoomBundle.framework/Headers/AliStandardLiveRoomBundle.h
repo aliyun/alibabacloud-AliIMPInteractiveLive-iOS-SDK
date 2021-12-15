@@ -21,6 +21,7 @@ FOUNDATION_EXPORT const unsigned char AliStandardLiveRoomBundleVersionString[];
 #import <AliStandardLiveRoomBundle/ASLRBAppInitConfig.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomManager.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveInitConfig.h>
+#import <AliStandardLiveRoomBundle/ASLRBLiveRoomUserModel.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveBusinessInfo.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomAnchorProtocol.h>
 #import <AliStandardLiveRoomBundle/ASLRBLiveRoomAudienceProtocol.h>
