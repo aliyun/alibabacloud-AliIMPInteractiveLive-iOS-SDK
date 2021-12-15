@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ASLRBLiveBusinessInfo;
+
 @interface ASLRBLiveInitConfig : NSObject
 
 /**
@@ -24,19 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString* liveID;
 
 /**
- *本场直播的标题，非必传，只有主播侧设置有效
+ *本场直播的ID，主播侧非必传，观众侧必传
  */
-@property (nonatomic, copy) NSString* liveTitle;
-
-/**
- *本场直播的封面图地址，非必传，只有主播侧设置有效
- */
-@property (nonatomic, copy) NSString* liveCoverURL;
-
-/**
- *本场直播的自定义数据，非必传，只有主播侧设置有效
- */
-@property (nonatomic, copy) NSString* liveCustomData;
+@property (nonatomic, strong) ASLRBLiveBusinessInfo* liveBusinessInfo;
 
 /**
  * 本场直播弹幕的最大字符个数（即[NSString length]），默认为50，支持外部设置0~50之间的值；

@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, ASLRBLiveSystemMessageLevel)
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ASLRBLiveSystemMessageModel : NSObject
-@property (strong, nonatomic) NSAttributedString* message;
+@property (strong, nonatomic) NSMutableAttributedString* message;
 @property (assign, nonatomic) ASLRBLiveSystemMessageLevel level;
 @end
 

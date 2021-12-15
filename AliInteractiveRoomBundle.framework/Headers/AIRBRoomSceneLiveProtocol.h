@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AIRBRoomSceneLiveBusinessInfo;
+
 @protocol AIRBRoomSceneLiveProtocol <NSObject>
 - (void) createLiveWithTitle:(NSString*)title
                       notice:(NSString*)notice
@@ -32,6 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
                       pageSize:(int32_t)pageSize
                      onSuccess:(void(^)(NSDictionary* response))onSuccess
                      onFailure:(void(^)(NSString* error))onFailure;
+
+- (void) updateLiveBusinessInfo:(AIRBRoomSceneLiveBusinessInfo*)info
+                      onSuccess:(void(^)(void))onSuccess
+                      onFailure:(void(^)(NSString* error))onFailure;
 @end
 
 NS_ASSUME_NONNULL_END

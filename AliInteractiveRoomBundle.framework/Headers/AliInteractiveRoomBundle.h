@@ -41,6 +41,7 @@
 
 #import <AliInteractiveRoomBundle/AIRBRoomSceneClassProtocol.h>
 #import <AliInteractiveRoomBundle/AIRBRoomSceneLiveProtocol.h>
+#import <AliInteractiveRoomBundle/AIRBRoomSceneLiveBusinessInfo.h>
 
 #import <AliInteractiveRoomBundle/AIRBUtility.h>
 

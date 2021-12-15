@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class ASLRBLiveInitConfig;
+@class ASLRBLiveInitConfig, ASLRBLiveBusinessInfo;
 
 @protocol ASLRBLiveRoomAnchorProtocol <NSObject>
 /**
@@ -24,8 +24,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void) updateLiveConfig:(ASLRBLiveInitConfig*)config
                 onSuccess:(void (^)(void))onSuccess
-                onFailure:(void (^)(NSString* errorMessage))onFailure;
+                onFailure:(void (^)(NSString* errorMessage))onFailure DEPRECATED_MSG_ATTRIBUTE("建议使用updateLiveBusinessInfo");
 
+/**
+ * @brief 更新直播相关信息；仅开播后在主播侧调用有效；
+ * @param info 具体见ASLRBLiveBusinessInfo
+ */
+- (void) updateLiveBusinessInfo:(ASLRBLiveBusinessInfo*)info
+                      onSuccess:(void (^)(void))onSuccess
+                      onFailure:(void (^)(NSString* errorMessage))onFailure;
+                
 /**
  * 切换前后摄像头，主播端调用;
  */
