@@ -167,10 +167,24 @@ NS_ASSUME_NONNULL_BEGIN
                  onSuccess:(void(^)(void))onSuccess
                  onFailure:(void(^)(NSString* errorMessage))onFailure;
 
+/**
+ * 静音/解除静音某个成员
+ * @param mute YES为静音，NO为取消静音
+ * @param onSuccess 成功的回调
+ * @param onFailure 失败的回调
+ * @note 只有房主可以调用
+ */
 - (void) muteRemoteMicphone:(BOOL)mute remotePeer:(NSString*)userID
                       onSuccess:(void(^)(void))onSuccess
                       onFailure:(void(^)(NSString* errorMessage))onFailure;
 
+/**
+ * 静音/解除静音全体成员
+ * @param mute YES为静音，NO为取消静音
+ * @param onSuccess 成功的回调
+ * @param onFailure 失败的回调
+ * @note 只有房主可以调用
+ */
 - (void) muteAllRemoteMicphone:(BOOL)mute
                      onSuccess:(void(^)(void))onSuccess
                      onFailure:(void(^)(NSString* errorMessage))onFailure;
