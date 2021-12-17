@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author       = { "aliyunvideo" => "weihe.whq@alibaba-inc.com"}
   s.platform     = :ios
   s.platform     = :ios, "10.0"
-  s.source       = { :git => "https://paas-sdk.oss-cn-shanghai.aliyuncs.com/paas/imp/ios/CocoaPods%E5%8F%91%E5%B8%83SDK/1.5.0-rc-test", :tag => "#{s.version}" }
+  s.source       = { :http => "https://paas-sdk.oss-cn-shanghai.aliyuncs.com/paas/imp/ios/release-pod-sdk/#{s.version}.zip"}
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
