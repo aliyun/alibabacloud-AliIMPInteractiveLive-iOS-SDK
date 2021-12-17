@@ -26,7 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString* liveID;
 
 /**
- *本场直播的ID，主播侧非必传，观众侧必传
+ * @brief 本场直播的扩展信息；
+  注意：更新此字段不会触发观众端ASLRBCommonEventLiveExtensionUpdated事件上报，只有更新ASLRBLiveBusinessInfo.liveCustomData后才会触发观众端ASLRBCommonEventLiveExtensionUpdated事件上报；
+ *
+ */
+@property (nonatomic, copy) NSString* liveCustomData DEPRECATED_MSG_ATTRIBUTE("建议使用ASLRBLiveBusinessInfo.liveCustomData");
+
+/**
+ *本场直播的信息，里面包括直播的title、notice、封面图url以及扩展信息
  */
 @property (nonatomic, strong) ASLRBLiveBusinessInfo* liveBusinessInfo;
 
