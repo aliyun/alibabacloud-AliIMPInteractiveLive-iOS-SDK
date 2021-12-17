@@ -1,6 +1,0 @@
-framework module AliInteractiveRoomBundle {
-  umbrella header "AliInteractiveRoomBundle_Umbrella.h"
-
-  export *
-  module * { export * }
-}
