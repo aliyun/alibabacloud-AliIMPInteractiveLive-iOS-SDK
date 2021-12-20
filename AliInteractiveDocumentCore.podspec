@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveDocumentCore"
-  s.version      = "1.5.0-rc11"
+  s.version      = "1.5.0-rc12"
   s.summary      = "AliInteractiveDocumentCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive document core, which implement by Objective-C.
