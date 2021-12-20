@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveDocumentCore"
-  s.version      = "1.5.0-rc13"
+  s.version      = "1.5.0-rc14"
   s.summary      = "AliInteractiveDocumentCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive document core, which implement by Objective-C.
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.vendored_frameworks = 'AliInteractiveDocumentCore.framework'
+  s.vendored_frameworks = '#{s.version}/AliInteractiveDocumentCore.framework'
   s.frameworks = 'Foundation', 'UIKit'
   s.libraries ='resolv'
    
