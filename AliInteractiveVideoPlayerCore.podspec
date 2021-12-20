@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.vendored_frameworks = 'AliInteractiveVideoPlayerCore.framework'
+  s.vendored_frameworks = "#{s.version}/AliInteractiveVideoPlayerCore.framework"
   s.frameworks = 'Foundation', 'UIKit'
   # s.libraries ='z', 'c++','resolv'
    

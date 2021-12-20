@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 
   # s.dependency 'AliInteractiveRoomLivePusherDependency', '1.0.0.1-SNAPSHOT'
 
-  s.vendored_frameworks = 'AliInteractiveLiveCore.framework'
+  s.vendored_frameworks = "#{s.version}/AliInteractiveLiveCore.framework"
   s.frameworks = 'Foundation', 'UIKit', 'CoreMotion'
-  s.resource_bundles = {'AliInteractiveLiveBeautyResource' => ['AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyImageResource.xcassets', 'AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyParamResource/*']}
+  s.resource_bundles = {"AliInteractiveLiveBeautyResource" => ["#{s.version}/AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyImageResource.xcassets", "#{s.version}/AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyParamResource/*"]}
   # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'

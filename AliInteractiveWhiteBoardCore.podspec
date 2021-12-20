@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.vendored_frameworks = 'AliInteractiveWhiteBoardCore.framework'
+  s.vendored_frameworks = "#{s.version}/AliInteractiveWhiteBoardCore.framework"
   s.frameworks = 'Foundation', 'UIKit'
-  s.resource_bundles = {'AliInteractiveWhiteBoardResource' => ['AliInteractiveWhiteBoardResource/AliInteractiveWhiteBoardCoreResource.xcassets']}
+  s.resource_bundles = {"AliInteractiveWhiteBoardResource" => ["#{s.version}/AliInteractiveWhiteBoardResource/AliInteractiveWhiteBoardCoreResource.xcassets"]}
   # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.vendored_frameworks = 'AliInteractiveRoomBundle.framework'
+  s.vendored_frameworks = "#{s.version}/AliInteractiveRoomBundle.framework"
   s.frameworks = 'Foundation', 'UIKit', 'SystemConfiguration', 'CoreTelephony'
   s.libraries ='z', 'c++','resolv'
    

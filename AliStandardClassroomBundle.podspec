@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.vendored_frameworks = 'AliStandardClassroomBundle.framework'
+  s.vendored_frameworks = "#{s.version}/AliStandardClassroomBundle.framework"
   s.frameworks = 'Foundation', 'UIKit'
-  s.resource_bundles = {'AliStandardClassroomResource' => ['AliStandardClassroomResource.bundle/Assets.xcassets']}
+  s.resource_bundles = {"AliStandardClassroomResource" => ["#{s.version}/AliStandardClassroomResource.bundle/Assets.xcassets"]}
   # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'
