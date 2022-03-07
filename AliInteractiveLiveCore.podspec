@@ -16,7 +16,8 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  # s.dependency 'AliInteractiveRoomLivePusherDependency', '1.0.0.1-SNAPSHOT'
+  s.dependency 'Queen', '1.4.1-official-lite'
+  s.dependency 'AlivcLivePusher', '4.2.1'
 
   s.vendored_frameworks = "#{s.version}/AliInteractiveLiveCore.framework"
   s.frameworks = 'Foundation', 'UIKit', 'CoreMotion'
