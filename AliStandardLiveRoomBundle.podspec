@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
+  s.dependency 'AliInteractiveRoomBundle', "#{s.version}"
+
   s.vendored_frameworks = "#{s.version}/AliStandardLiveRoomBundle.framework"
   s.frameworks = 'Foundation', 'UIKit'
   s.resource_bundles = {"AliStandardLiveRoomResource" => ["#{s.version}/AliStandardLiveRoomBundleResource/ASLRBLiveRoomAssets.xcassets"]}
