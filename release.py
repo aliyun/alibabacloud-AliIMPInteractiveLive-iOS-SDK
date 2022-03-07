@@ -2,7 +2,7 @@
 
 import os,sys
 
-specs = ['AliInteractiveLiveCore.podspec','AliStandardLiveRoomBundle.podspec','AliStandardClassroomBundle.podspec']
+specs = ['AliStandardLiveRoomBundle.podspec']
 
 if len(sys.argv) == 0:
     print('please input version')
@@ -33,7 +33,7 @@ else:
 
     for sp in specs:
         lint = 'pod spec lint ' + sp + ' --allow-warnings'
-        trunk = 'pod trunk push ' + sp + ' --allow-warnings'
+        trunk = 'pod trunk push ' + sp + ' --allow-warnings' + ' --verbose'
         os.system(lint)
         os.system(trunk)
     
