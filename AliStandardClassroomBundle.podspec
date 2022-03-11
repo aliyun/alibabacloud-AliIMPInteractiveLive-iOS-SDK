@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliStandardClassroomBundle"
-  s.version      = "1.6.020220308001"
+  s.version      = "1.6.0.20220311002"
   s.summary      = "AliStandardClassroomBundle."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live, which implement by Objective-C.
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.dependency 'AliInteractiveRoomBundle', "#{s.version}"
+  s.dependency 'AliInteractiveRoomBundle', "~> #{s.version}"
   s.dependency 'LEEAlert'
   s.dependency 'MJRefresh'
 

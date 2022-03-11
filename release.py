@@ -2,7 +2,7 @@
 
 import os,sys
 
-specs = ['AliInteractiveDocumentCore.podspec','AliInteractiveLiveCore.podspec','AliInteractiveRTCCore.podspec','AliInteractiveRoomBundle.podspec','AliInteractiveVideoPlayerCore.podspec','AliInteractiveWhiteBoardCore.podspec','AliStandardLiveRoomBundle.podspec','AliStandardClassroomBundle.podspec']
+specs = ['AliInteractiveRoomBundle.podspec','AliInteractiveDocumentCore.podspec','AliInteractiveLiveCore.podspec','AliInteractiveRTCCore.podspec','AliInteractiveVideoPlayerCore.podspec','AliInteractiveWhiteBoardCore.podspec','AliStandardLiveRoomBundle.podspec','AliStandardClassroomBundle.podspec']
 
 if len(sys.argv) == 0:
     print('please input version')
