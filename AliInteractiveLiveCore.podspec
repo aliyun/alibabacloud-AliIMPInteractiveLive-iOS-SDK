@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveLiveCore"
-  s.version      = "1.6.0.20220311002"
+  s.version      = "1.7.0-rc1"
   s.summary      = "AliInteractiveLiveCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live core, which implement by Objective-C.
@@ -16,12 +16,10 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.dependency 'Queen', '1.4.1-official-lite'
   s.dependency 'AlivcLivePusher', '4.2.1'
 
   s.vendored_frameworks = "#{s.version}/AliInteractiveLiveCore.framework"
   s.frameworks = 'Foundation', 'UIKit', 'CoreMotion'
-  s.resource_bundles = {"AliInteractiveLiveBeautyResource" => ["#{s.version}/AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyImageResource.xcassets", "#{s.version}/AliInteractiveLiveBeautyResource.bundle/AliInteractiveLiveBeautyParamResource/*"]}
   # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'

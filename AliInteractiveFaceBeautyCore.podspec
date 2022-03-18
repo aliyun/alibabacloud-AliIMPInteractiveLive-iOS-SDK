@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
-  s.name         = "AliInteractiveDocumentCore"
+  s.name         = "AliInteractiveFaceBeautyCore"
   s.version      = "1.7.0-rc1"
-  s.summary      = "AliInteractiveDocumentCore."
+  s.summary      = "AliInteractiveFaceBeautyCore."
   s.description  = <<-DESC
-                   It's an SDK for aliyun interactive document core, which implement by Objective-C.
+                   It's an SDK for aliyun interactive face beauty core, which implement by Objective-C.
                    DESC
   s.homepage     = "https://github.com/aliyun/alibabacloud-AliIMPInteractiveLive-iOS-SDK"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -14,14 +14,16 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }  
 
-  s.vendored_frameworks = "#{s.version}/AliInteractiveDocumentCore.framework"
-  s.frameworks = 'Foundation', 'UIKit'
-  s.libraries ='resolv'
+  s.dependency 'Queen', '1.9.1-official-pro'
+
+  s.vendored_frameworks = "#{s.version}/AliInteractiveFaceBeautyCore.framework"
+  s.frameworks = 'Foundation', 'UIKit', 'CoreMotion'
+  s.resource_bundles = {"AliInteractiveFaceBeautyCoreResource" => ["#{s.version}/AIRBFaceBeautyCoreResource/*"]}
+  # s.libraries ='z', 'c++','resolv'
    
   #s.frameworks = 'VideoToolBox','MediaPlayer'
-  #s.libraries = 'z'  
   s.requires_arc = true
    
 
