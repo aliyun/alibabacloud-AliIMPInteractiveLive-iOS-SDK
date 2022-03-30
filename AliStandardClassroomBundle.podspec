@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }	
 
-  s.dependency 'AliInteractiveRoomBundle', "~> #{s.version}"
+  s.dependency 'AliInteractiveRoomBundle'
   s.dependency 'LEEAlert'
   s.dependency 'MJRefresh'
 
