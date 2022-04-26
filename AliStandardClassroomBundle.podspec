@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliStandardClassroomBundle"
-  s.version      = "1.8.0"
+  s.version      = "1.8.20220426001"
   s.summary      = "AliStandardClassroomBundle."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live, which implement by Objective-C.
