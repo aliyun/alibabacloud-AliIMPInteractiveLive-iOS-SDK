@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveRTCCore"
-  s.version      = "1.8.1"
+  s.version      = "1.8.120220517001"
   s.summary      = "AliInteractiveRTCCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive live, which implement by Objective-C.
