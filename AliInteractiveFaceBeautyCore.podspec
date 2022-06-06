@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AliInteractiveFaceBeautyCore"
-  s.version      = "1.8.220220530002"
+  s.version      = "1.8.220220606001"
   s.summary      = "AliInteractiveFaceBeautyCore."
   s.description  = <<-DESC
                    It's an SDK for aliyun interactive face beauty core, which implement by Objective-C.
