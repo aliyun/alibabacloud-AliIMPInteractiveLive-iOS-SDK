@@ -5,7 +5,7 @@ import os,sys
 specs = ['AliInteractiveRoomBundle.podspec','AliInteractiveDocumentCore.podspec','AliInteractiveLiveCore.podspec','AliInteractiveRTCCore.podspec','AliInteractiveVideoPlayerCore.podspec','AliInteractiveWhiteBoardCore.podspec','AliInteractiveFaceBeautyCore.podspec','AliInteractiveProduct360Core.podspec','AliStandardLiveRoomBundle.podspec','AliStandardClassroomBundle.podspec']
 
 if len(sys.argv) == 0:
-    print('please input version')
+    print('please input version!')
 else:
     version = sys.argv[1]
 
